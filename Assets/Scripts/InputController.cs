@@ -10,12 +10,14 @@ public class InputController : MonoBehaviour
 
     public Rewired.Player rp { get { return ReInput.isReady ? ReInput.players.GetPlayer(0) : null; } }
     private Rigidbody rb;
+    private InputDebugger inputDebugger;
 
     private float speed;
 
     void Start()
     {
         this.rb = GetComponent<Rigidbody>();
+        this.inputDebugger = GetComponent<InputDebugger>();
     }
 
     void FixedUpdate()
@@ -36,6 +38,13 @@ public class InputController : MonoBehaviour
         if (rp.GetButtonDown("Fire"))
         {
             // Do Shit
+            this.inputDebugger.Fire(true);
+
+        }
+        else if (rp.GetButtonUp("Fire"))
+        {
+            // Stop Shit
+            this.inputDebugger.Fire(false);
         }
     }
 
