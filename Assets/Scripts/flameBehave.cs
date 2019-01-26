@@ -8,12 +8,16 @@ public class flameBehave : MonoBehaviour {
 
 public GameObject player;
 
-    int maxHP = 1000;
+    int maxHP = 100;
     public int actualHP;
     public float fixedtime;
+    Light flama;
 
     void Start()
     {
+        flama = GetComponent<Light>();
+        flama.range = maxHP/5;
+
         fixedtime = 1f;
         this.actualHP = maxHP;
         StartCoroutine(Turnlight());
@@ -33,7 +37,8 @@ public GameObject player;
         while (actualHP > 0)
         {
             actualHP = actualHP - 1;
-            Debug.Log("flame: " + actualHP);
+            flama.range = actualHP/5;
+            //Debug.Log("flame: " + actualHP);
             yield return new WaitForSeconds(fixedtime);
         }
 
