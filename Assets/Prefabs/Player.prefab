@@ -26,6 +26,8 @@ GameObject:
   - component: {fileID: 114918658224647734}
   - component: {fileID: 114414897477370000}
   - component: {fileID: 114085715722757254}
+  - component: {fileID: 108421800689904652}
+  - component: {fileID: 114506399510564000}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -95,14 +97,51 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1094054882859248}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 3
+  m_Drag: 2.2
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!108 &108421800689904652
+Light:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1094054882859248}
+  m_Enabled: 0
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 0.9622642, g: 0.9343113, b: 0.4765931, a: 1}
+  m_Intensity: 5
+  m_Range: 13
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 1
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!114 &114085715722757254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,6 +169,19 @@ MonoBehaviour:
   canInteract: 0
   interactionTag: 
   currentInteractive: {fileID: 0}
+  currentHP: 100
+  drainSpeed: 2
+--- !u!114 &114506399510564000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1094054882859248}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96cb350a270d84b3a82e76adb8e22999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114918658224647734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21b63245bc0db4116931cc0efec01b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMultiplier: 4
+  speedMultiplier: 6
 --- !u!136 &136201892485958760
 CapsuleCollider:
   m_ObjectHideFlags: 1

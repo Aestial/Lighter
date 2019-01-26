@@ -7,6 +7,8 @@ public class PlayerControler : MonoBehaviour
     public bool canInteract;
     [SerializeField] private string interactionTag;
     public GameObject currentInteractive;
+    public float currentHP = 100;
+    [SerializeField] float drainSpeed = 0.5f;
 
     // Use this for initialization
     void Start()
@@ -17,7 +19,8 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (currentHP > 0.0f)
+            currentHP -= drainSpeed * Time.deltaTime;
     }
 
     public void Interact()
