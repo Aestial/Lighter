@@ -18,7 +18,7 @@ public GameObject player;
         flama = GetComponent<Light>();
         flama.range = maxHP/5;
 
-        fixedtime = 1f;
+        //fixedtime = 1f;
         this.actualHP = maxHP;
         StartCoroutine(Turnlight());
     }
@@ -28,6 +28,8 @@ public GameObject player;
         if (other.gameObject.name == "Player")
         {
             this.actualHP = maxHP;
+            StopAllCoroutines();
+            StartCoroutine(Turnlight());
             Debug.Log("Touching flame");
         }
     }
