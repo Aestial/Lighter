@@ -10,19 +10,23 @@ public class InputController : MonoBehaviour
 
     public Rewired.Player rp { get { return ReInput.isReady ? ReInput.players.GetPlayer(0) : null; } }
     private Rigidbody rb;
+    private InputDebugger inputDebugger;
 
     private float speed;
+
+    private bool isFiring;
 
     void Start()
     {
         this.rb = GetComponent<Rigidbody>();
+        this.inputDebugger = GetComponent<InputDebugger>();
     }
 
     void FixedUpdate()
     {
         
         if (!ReInput.isReady) return; // Exit if Rewired isn't ready. This would only happen during a script recompile in the editor.
-        this.speed = this.speedMultiplier;
+        this.speed = this.isFiring ? this.speedMultiplier * 2.0f : this.speedMultiplier;
         Vector3 moveVector = Vector3.zero;
         moveVector.x = rp.GetAxis("Move Horizontal"); // get input by name or action id
         moveVector.z = rp.GetAxis("Move Vertical");
@@ -36,6 +40,15 @@ public class InputController : MonoBehaviour
         if (rp.GetButtonDown("Fire"))
         {
             // Do Shit
+            this.isFiring = true;
+            this.inputDebugger.Fire(this.isFiring);
+
+        }
+        else if (rp.GetButtonUp("Fire"))
+        {
+            // Stop Shit
+            this.isFiring = false;
+            this.inputDebugger.Fire(this.isFiring);
         }
     }
 
