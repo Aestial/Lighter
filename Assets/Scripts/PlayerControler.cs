@@ -8,11 +8,16 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] private string interactionTag;
     public GameObject currentInteractive;
     public float currentHP = 100;
+    public float speed;
+    public Vector2 direction;
     [SerializeField] float drainSpeed = 0.5f;
+
+    private Rigidbody rigidbody;
 
     // Use this for initialization
     void Start()
     {
+        this.rigidbody = GetComponent<Rigidbody>();
         this.currentInteractive = null;
     }
 
@@ -21,6 +26,10 @@ public class PlayerControler : MonoBehaviour
     {
         if (currentHP > 0.0f)
             currentHP -= drainSpeed * Time.deltaTime;
+        this.speed = this.rigidbody.velocity.magnitude;
+        float x = this.rigidbody.velocity.normalized.x;
+        float y = this.rigidbody.velocity.normalized.z;
+        this.direction = new Vector2(x, y);
     }
 
     public void Interact()
