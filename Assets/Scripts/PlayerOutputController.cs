@@ -7,6 +7,7 @@ public class PlayerOutputController : MonoBehaviour
     [SerializeField] float startSpeedThreshold;
     [SerializeField] Animator animator;
     [SerializeField] Light light;
+    [SerializeField] SpriteRenderer spriteRenderer;
     PlayerControler playerControler;
     //Light light;
     //[SerializeField] Animator animator;
@@ -16,6 +17,7 @@ public class PlayerOutputController : MonoBehaviour
     public bool isHorizontal;
     public bool isUp;
     public bool isDown;
+    public bool isLeft;
 
 	// Use this for initialization
 	void Start () 
@@ -38,14 +40,16 @@ public class PlayerOutputController : MonoBehaviour
         //float x = (direction.x >= direction.y) ? Mathf.Sign(direction.x) : 0;
         //float y = (direction.x < direction.y) ? Mathf.Sign(direction.y) : 0;
 
-        isHorizontal = Mathf.Abs(direction.x) >= Mathf.Abs(direction.y);
-        Debug.Log(isHorizontal);
+        isHorizontal = Mathf.Abs(direction.x) > Mathf.Abs(direction.y);
         isUp = !isHorizontal && Mathf.Sign(direction.y) > 0.0f;
         isDown = !isHorizontal && Mathf.Sign(direction.y) < 0.0f;
+        isLeft = isHorizontal && Mathf.Sign(direction.x) < 0.0f;
 
         animator.SetBool("IsHorizontal", isHorizontal);
         animator.SetBool("IsUp", isUp);
         animator.SetBool("IsDown", isDown);
+
+        this.spriteRenderer.flipX = isLeft;
 
         // ???
         this.light.intensity = playerControler.currentHP / 20;
