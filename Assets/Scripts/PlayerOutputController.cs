@@ -6,39 +6,43 @@ public class PlayerOutputController : MonoBehaviour
 {
     [SerializeField] float startSpeedThreshold;
     [SerializeField] Animator animator;
-    [SerializeField] Light light;
     [SerializeField] SpriteRenderer spriteRenderer;
-    PlayerControler playerControler;
-    //Light light;
-    //[SerializeField] Animator animator;
 
-    public float speed;
-    public Vector2 direction;
-    public bool isHorizontal;
-    public bool isUp;
-    public bool isDown;
-    public bool isLeft;
+    [SerializeField] Transform flare;
+    [SerializeField] float maxFlare;
+    [SerializeField] float minFlare;
+
+    PlayerControler playerControler;
+
+    private float speed;
+    private Vector2 direction;
+    private bool isHorizontal;
+    private bool isUp;
+    private bool isDown;
+    private bool isLeft;
+
+    float currentHP;
 
 	// Use this for initialization
 	void Start () 
     {
-        //animator = GetComponent<Animator>();
-        //light = GetComponent<Light>();
         playerControler = GetComponent<PlayerControler>();	
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
+        currentHP = playerControler.currentHP;
         speed = playerControler.speed;
         direction = playerControler.direction;
+
+        float flareScale = Mathf.Lerp(minFlare, maxFlare, currentHP);
+        flare.localScale = new Vector3(flareScale, flareScale, flareScale);
 
         if (speed > startSpeedThreshold)
         {
             animator.SetFloat("Speed", speed);
         }
-        //float x = (direction.x >= direction.y) ? Mathf.Sign(direction.x) : 0;
-        //float y = (direction.x < direction.y) ? Mathf.Sign(direction.y) : 0;
 
         isHorizontal = Mathf.Abs(direction.x) > Mathf.Abs(direction.y);
         isUp = !isHorizontal && Mathf.Sign(direction.y) > 0.0f;
@@ -51,7 +55,5 @@ public class PlayerOutputController : MonoBehaviour
 
         this.spriteRenderer.flipX = isLeft;
 
-        // ???
-        this.light.intensity = playerControler.currentHP / 20;
 	}
 }

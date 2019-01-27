@@ -7,7 +7,7 @@ public class PlayerControler : MonoBehaviour
     public bool canInteract;
     [SerializeField] private string interactionTag;
     public GameObject currentInteractive;
-    public float currentHP = 100;
+    public float currentHP = 1.0f;
     public float speed;
     public Vector2 direction;
     [SerializeField] float drainSpeed = 0.5f;
@@ -24,8 +24,9 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentHP > 0.0f)
-            currentHP -= drainSpeed * Time.deltaTime;
+        //if (currentHP > 0.0f)
+            //currentHP -= drainSpeed * Time.deltaTime;
+
         this.speed = this.rigidbody.velocity.magnitude;
         float x = this.rigidbody.velocity.normalized.x;
         float y = this.rigidbody.velocity.normalized.z;
