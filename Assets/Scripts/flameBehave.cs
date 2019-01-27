@@ -2,46 +2,63 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class flameBehave : MonoBehaviour {
+public class FlameBehave : MonoBehaviour {
 
 	// Use this for initialization
 
-public GameObject player;
+    public GameObject player;
+    [SerializeField] float cost = 0.25f;
+    [SerializeField] float drainSpeed = 0.01f;
+    [SerializeField] float debounceTime = 1.0f;
+    [SerializeField] AudioClip fireSound;
 
-    int maxHP = 100;
-    public int actualHP;
+    public float drainMultiplier = 1.0f;
+
+    float maxHP = 1.0f;
+    public float actualHP;
     public float fixedtime;
-    Light flama;
+
+    bool debounce = false;
 
     void Start()
     {
-        flama = GetComponent<Light>();
-        flama.range = maxHP/5;
-
-        fixedtime = 1f;
+        //fixedtime = 1f;
         this.actualHP = maxHP;
         StartCoroutine(Turnlight());
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Player")
+        if (!debounce && actualHP > 0.0f && other.gameObject.name == "Player")
         {
-            this.actualHP = maxHP;
-            Debug.Log("Touching flame");
+            float playerHP = other.GetComponent<PlayerControler>().currentHP;
+            if (playerHP >= cost)
+            {
+                debounce = true;
+                this.actualHP = maxHP;
+                StopAllCoroutines();
+                StartCoroutine(Turnlight());
+                StartCoroutine(DebounceCoroutine());
+                Debug.Log("Touching flame");
+                other.GetComponent<PlayerControler>().currentHP -= cost;
+                AudioManager.Instance.PlayOneShoot2D(fireSound);
+            }
         }
+    }
+
+    IEnumerator DebounceCoroutine()
+    {
+        yield return new WaitForSeconds(debounceTime);
+        debounce = false;
     }
 
     IEnumerator Turnlight()
     {
         while (actualHP > 0)
         {
-            actualHP = actualHP - 1;
-            flama.range = actualHP/5;
+            actualHP = actualHP - (drainSpeed * drainMultiplier);
             //Debug.Log("flame: " + actualHP);
             yield return new WaitForSeconds(fixedtime);
         }
-
-
     }
 }

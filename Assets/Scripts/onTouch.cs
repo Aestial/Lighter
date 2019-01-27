@@ -2,39 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class onTouch : MonoBehaviour {
+public class OnTouch : MonoBehaviour {
 
-    int maxHP = 1000;
-    public int actualHP;
-    public float fixedtime;
+    [SerializeField] float maxHP = 1.0f;
+    //public float actualHP;
+    //public float fixedtime;
+    PlayerControler playerControler;
+    [SerializeField] AudioClip fireSound;
 
     public GameObject fuente;
     
     void Start () {
-        fixedtime = 1f;
-        this.actualHP = maxHP;
-        StartCoroutine(Lowerlight());
+        //fixedtime = 1f;
+        //this.actualHP = maxHP;
+        //StartCoroutine(Lowerlight());
+        this.playerControler = GetComponent<PlayerControler>();
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Source")
         {
-            this.actualHP = maxHP;
-            Debug.Log("Touching!");
+            this.playerControler.currentHP = maxHP;
+            AudioManager.Instance.PlayOneShoot2D(fireSound);
+            //this.actualHP = maxHP;
+            Debug.Log("Charging!");
 
         }
     }
 
-    IEnumerator Lowerlight()
-    {
-        while (actualHP > 0)
-        {
-            actualHP = actualHP -1;
-            yield return new WaitForSeconds(fixedtime);
-        }
+    //IEnumerator Lowerlight()
+    //{
+    //    while (actualHP > 0)
+    //    {
+    //        actualHP = actualHP -1;
+    //        yield return new WaitForSeconds(fixedtime);
+    //    }
 
     
-    }
+    //}
 
 }

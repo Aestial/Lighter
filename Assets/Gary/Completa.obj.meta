@@ -1,0 +1,175 @@
+fileFormatVersion: 2
+guid: 368123ab7d39b684fa4e79e627c3e4a9
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: alfonmbra
+    100002: bottle
+    100004: bottle001
+    100006: bottle_2
+    100008: cajas
+    100010: //RootNode
+    100012: Estante
+    100014: jarron
+    100016: Object001
+    100018: pared_afuera
+    100020: paredes001
+    100022: pintura004
+    100024: pintura2
+    100026: piso
+    100028: puerta4
+    400000: alfonmbra
+    400002: bottle
+    400004: bottle001
+    400006: bottle_2
+    400008: cajas
+    400010: //RootNode
+    400012: Estante
+    400014: jarron
+    400016: Object001
+    400018: pared_afuera
+    400020: paredes001
+    400022: pintura004
+    400024: pintura2
+    400026: piso
+    400028: puerta4
+    2100000: alfonmbraMat
+    2100002: bottleMat
+    2100004: bottle001Mat
+    2100006: bottle_2Mat
+    2100008: cajasMat
+    2100010: EstanteMat
+    2100012: jarronMat
+    2100014: Object001Mat
+    2100016: pared_afueraMat
+    2100018: paredes001Mat
+    2100020: pintura004Mat
+    2100022: pintura2Mat
+    2100024: pisoMat
+    2100026: puerta4Mat
+    2300000: alfonmbra
+    2300002: bottle
+    2300004: bottle001
+    2300006: bottle_2
+    2300008: cajas
+    2300010: Estante
+    2300012: jarron
+    2300014: Object001
+    2300016: pared_afuera
+    2300018: paredes001
+    2300020: pintura004
+    2300022: pintura2
+    2300024: piso
+    2300026: puerta4
+    3300000: alfonmbra
+    3300002: bottle
+    3300004: bottle001
+    3300006: bottle_2
+    3300008: cajas
+    3300010: Estante
+    3300012: jarron
+    3300014: Object001
+    3300016: pared_afuera
+    3300018: paredes001
+    3300020: pintura004
+    3300022: pintura2
+    3300024: piso
+    3300026: puerta4
+    4300000: alfonmbra
+    4300002: bottle
+    4300004: bottle001
+    4300006: bottle_2
+    4300008: cajas
+    4300010: Estante
+    4300012: jarron
+    4300014: Object001
+    4300016: pared_afuera
+    4300018: paredes001
+    4300020: pintura004
+    4300022: pintura2
+    4300024: piso
+    4300026: puerta4
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 350
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
