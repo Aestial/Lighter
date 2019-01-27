@@ -1,4 +1,13 @@
+@CHARSET "ISO-8859-1";
+
+@font-face {
+  font-family: RomGoth;
+  src: url('Rom_Goth.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
 body {
+  font-family: RomGoth, Helvetica;
   background-color: #000;
   color: #fff;
 }
