@@ -1,0 +1,14 @@
+{
+"companyName": "GGJ2019-GigasedeLove",
+"productName": "Lighter",
+"dataUrl": "Lighter.data.unityweb",
+"asmCodeUrl": "Lighter.asm.code.unityweb",
+"asmMemoryUrl": "Lighter.asm.memory.unityweb",
+"asmFrameworkUrl": "Lighter.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"backgroundUrl": "Lighter.jpg",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#FFFFFF"
+}
