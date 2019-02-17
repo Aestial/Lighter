@@ -81,7 +81,8 @@
               <li><a href="Controllers.html">Controllers</a></li>
               <li><a href="ControllerMaps.html">Controller Maps</a></li>
               <li><a href="MapCategories.html">Map Categories</a></li>
-              <li><a href="ControllerMaps.html"></a><a href="Layouts.html">Layouts</a></li>
+              <li><a href="Layouts.html">Layouts</a></li>
+              <li><a href="ControllerTemplates.html">Controller Templates</a></li>
               <li><a href="CustomControllers.html">Custom Controllers</a></li>
             </ul>
             <strong>Extras:</strong>
@@ -94,6 +95,7 @@
             <strong>Misc:</strong>
             <ul>
 	          <li><a href="ComponentControls.html" title="Component Controls">Component Controls</a></li>
+	          <li><a href="PlayerControllers.html" title="Player Controllers">Player Controllers</a></li>
 	          <li><a href="InputMapper.html" title="Input Mapper">Input Mapper</a></li>
 	          <li><a href="UserDataStore.html" title="User Data Store">User Data Store</a></li>
             </ul>
@@ -133,7 +135,7 @@
     	<div class="main-body">
 	        <div class="logo"><a href="http://guavaman.com/projects/rewired" title="Rewired"><img src="files/images/rewired-logo.png" width="173" height="139" alt="Rewired" /></a></div>
                      
-          <h1>
+            <h1>
             <!-- InstanceBeginEditable name="PageHeader" -->Known Issues
       <!-- InstanceEndEditable -->
             </h1>
@@ -147,10 +149,8 @@
     </ul>
     <h3><a href="#windows">Windows:</a></h3>
     <ul>
-      <li><a href="#net46-windows-tilemap-exception">Windows, .NET 4.6 experiemental backend: Exception thrown when using Unity tilemap editor</a></li>
-      <li><a href="#net46-windows-touch-controls">Windows, .NET 4.6 experiemental backend: Touch controls don't work</a></li>
-      <li><a href="#net46-windows-freeze-on-exit">Windows, .NET 4.6 experiemental backend: Application freezes on exit</a></li>
-      <li><a href="#unity-2011-dot-net-46-editor-errors">Windows, .NET 4.6 experimental backend: Editor corruption in Unity 2017.1</a></li>
+      <li><a href="#windows-standalone-il2cpp">Windows Standalone, IL2CPP: Rewired falls back to Unity input</a></li>
+      <li><a href="#windows-directinput-joysticks-not-detected-net46">Windows Standalone, Direct Input: Joysticks not detected when using .Net 4.6 scripting backend</a></li>
       <li><a href="#windows-editor-oculus-touch-crash">Windows Editor: Crash in Unity 5.6+ with Oculus Touch</a></li>
       <li><a href="#xinput-device-name">Windows Platforms: XInput devices on Windows appear as &quot;XInput Gamepad&quot;</a></li>
       <li><a href="#windows-xinput-devices-use-x360-map">Windows Platforms: All XInput devices use the Xbox 360 Controller map when &quot;Use XInput&quot; is enabled</a></li>
@@ -163,6 +163,8 @@
       <li><a href="#windows-xbox-one-controller-game-center-popup-bug">Windows Standalone (Windows 10): Game Center popup keeps appearing when pressing keyboard keys</a></li>
       <li><a href="#windows-fallback-xbox-one-controller-mapping">Windows Standalone (Unity Fallback, Windows 10): XBox One controller has incorrect mapping</a></li>
       <li><a href="#windows-nvidia-shield-controller-problems">Windows Standalone: Nvidia Shield Controller problems on Raw Input and Direct Input</a></li>
+      <li><a href="#net46-windows-freeze-on-exit">Windows Standalone, .NET 4.6 experiemental backend: Application freezes on exit in Unity 2017</a></li>
+      <li><a href="#unity-2011-dot-net-46-editor-errors">Windows </a><a href="#net46-windows-freeze-on-exit">Standalone</a><a href="#unity-2011-dot-net-46-editor-errors">, .NET 4.6 experimental backend: Editor corruption in Unity 2017.1</a></li>
       <li><a href="#uwp-gamepads-appear-twice">Windows 10 Universal: Certain gamepads appear twice  when HID device support is enabled</a></li>
       <li><a href="#uwp-il2cpp-controller-disconnect-crash">Windows 10 Universal IL2CPP: Crash when disconnecting controllers</a></li>
       <li><a href="#uwp-shift-keys">Windows 10 Universal: Left Shift is activated when Right Shift is pressed</a></li>
@@ -173,11 +175,15 @@
       </ul>
     <h3><a href="#osx">OSX:</a></h3>
     <ul>
-      <li><a href="#osx-net46-initialization-exception">OSX, .NET 4.6 experimental backend: Throws exception on initialization</a></li>
+      <li><a href="#osx-standalone-il2cpp">OSX, IL2CPP: Rewired falls back to Unity input</a></li>
+      <li><a href="#osx-net46-initialization-exception">OSX, .NET 4.6 experimental backend: Throws exception on initialization in Unity 2017.1 - Unity 2017.3</a></li>
       </ul>
     <h3><a href="#linux">Linux:</a></h3>
     <ul>
+      
+      <li><a href="#linux-standalone-il2cpp">Linux, IL2CPP: Rewired falls back to Unity input</a></li>
       <li><a href="#keyboard-stuck-linux">Keyboard keys stuck on Linux in Unity 5.1.1</a></li>
+      <li><a href="#linux-keyboard-repeat-bug-builds">Keyboard keys repeat when held on Linux in builds</a></li>
     </ul>
 <h3><a href="#unity-editor">Unity Editor (all platforms):</a>    </h3>
 <ul>
@@ -188,11 +194,14 @@
       <li><a href="#installer-bug-1181">Installer error in Rewired 1.1.8.1</a></li>
       <li><a href="#il2cpp-p0-marshaled-error">IL2CPP: _p0_marshaled': undeclared identifier error on Unity 5.3.2p1, 5.3.2p2</a></li>
       <li><a href="#compiler-error-512-patch">Compiler error in 5.1.2 patch releases</a></li>
+      <li><a href="#editor-is-compiling-gc-alloc">InputManager_Base.Update generates 17 bytes of GC Alloc per frame in the Profiler</a></li>
+      <li><a href="#data-files-missing">&quot;Data Files is missing&quot; error</a></li>
     </ul>
     <h3><a href="#android">Android:</a></h3>
     <ul>
-      <li><a href="#android-remotes">Android remotes are not detected (Nexus Player, Amazon Fire TV, Razer Forge TV, etc.)</a></li>
-      <li><a href="#android-unity-joystick-bugs-v5_5">Android: Joysticks do not sent connect/disconnect events, multiple joysticks appear when the same joystick is unplugged and re-plugged</a></li>
+      <li><a href="#android-remotes">Remotes are not detected (Nexus Player, Amazon Fire TV, Razer Forge TV, etc.)</a></li>
+      <li><a href="#android-unity-joystick-bugs-v5_5">Joysticks do not sent connect/disconnect events, multiple joysticks appear when the same joystick is unplugged and re-plugged</a></li>
+      <li><a href="#android-il2cpp-ndk-compiler-bug">IL2CPP: Editor crashes or takes a very long time to compile or stalls forever</a></li>
       </ul>
     <h3><a href="ios-tvos">iOS / tvOS:</a></h3>
     <ul>
@@ -201,7 +210,7 @@
       </ul>
     <h3><a href="xbox-one">Xbox One:</a></h3>
     <ul>
-      <li><a href="xbox-one-controller-connections-error">Xbox One: Controller connections and disconnections do not work</a></li>
+      <li><a href="#xbox-one-controller-connections-error">Controller connections and disconnections do not work</a></li>
     </ul>
 <h3><a href="#ouya">Ouya:</a></h3>
     <ul>
@@ -210,13 +219,13 @@
     </ul>
     <h3><a href="#sdl2">SDL2:</a></h3>
     <ul>
-      <li><a href="#sdl2-osx-editor-haptic-feedback-not-supported">SDL2: OSX - Editor does not support haptic feedback</a></li>
-      <li><a href="#sdl2-osx-xbox-360-controller-no-vibration">SDL2: OSX - Xbox 360 Controller does not support vibration</a></li>
-      <li><a href="#sdl2-windows-xbox-360-vibration-motors">SDL2: Windows - XBox 360 Controller does not allow independent control of vibration motors</a></li>
+      <li><a href="#sdl2-osx-editor-haptic-feedback-not-supported">OSX - Editor does not support haptic feedback</a></li>
+      <li><a href="#sdl2-osx-xbox-360-controller-no-vibration">OSX - Xbox 360 Controller does not support vibration</a></li>
+      <li><a href="#sdl2-windows-xbox-360-vibration-motors">Windows - XBox 360 Controller does not allow independent control of vibration motors</a></li>
       </ul>
     <h3><a href="#steam">Steam:</a></h3>
     <ul>
-      <li><a href="#steam-windows-tab-shift-keys-stuck-overlay">Steam: Windows - Tab and Shift keys get stuck on after opening Steam overlay using the keyboard</a></li>
+      <li><a href="#steam-windows-tab-shift-keys-stuck-overlay">Windows - Tab and Shift keys get stuck on after opening Steam overlay using the keyboard</a></li>
     </ul>
 <hr />
 <p>&nbsp;</p>
@@ -233,61 +242,14 @@
 <p>&nbsp;</p>
 <h2><a name="windows" id="windows"></a>Windows</h2>
 <p>&nbsp;</p>
-<h3><a name="net46-windows-tilemap-exception" id="net46-windows-tilemap-exception"></a>Windows, .NET 4.6 experiemental backend: Exception thrown when using Unity tilemap editor</h3>
-<p>As of Unity 2017.2.0f3, the 2D tilemap editor will throw exceptions when used with Rewired in the project. This is a bug in the .NET 4.6 experimental backend and has been reported to Unity.</p>
-<p><strong>Update:</strong> This was fixed by Unity as of Unity 2017.3.0b4.<br />
-  <strong>Update:</strong> A workaround was added in Rewired 1.1.7.8 to get around this bug in all versions of Unity.</p>
-<p>The only workaround is to disable the &quot;Editor&quot; checkbox on the Rewired/Internal/Libraries/Runtime/Rewired_Windows_Lib.dll inspector, making native input no longer run when using the Unity editor. There is no &quot;fix&quot; possible in Rewired to make this work becaues the issue is not in Rewired. It will only function correctly when Unity fixes the bug in the .NET 4.6 experimental backend.</p>
+<h3><a name="windows-standalone-il2cpp" id="windows-standalone-il2cpp"></a>Windows Standalone, IL2CPP: Rewired falls back to Unity input</h3>
+<p>Support for IL2CPP on desktop platforms was added in Rewired 1.1.22.0.</p>
+<p><strong>Solution:</strong> <a href="Updating.html">Update Rewired</a>.</p>
 <p>&nbsp;</p>
 <hr />
-<h3><a name="net46-windows-touch-controls" id="net46-windows-touch-controls"></a>Windows, .NET 4.6 experiemental backend: Touch controls don't work</h3>
-<p>As of Unity 2017.2.0f3, when the .NET 4.6 experimental backend is enabled in Windows, touch controls will no longer work. This is due to a bug in the .NET 4.6 experimental backend with the EqualityComparer&lt;T&gt; implementation not using the overloaded == operator of the UnityEngine.Object class. This bug has been reported to Unity. Unity has confirmed this bug in the .NET 4.6 backend but no ETA for a fix is known.</p>
-<p><strong>Update:</strong> A workaround was added in Rewired 1.1.7.8 to get around this bug in all versions of Unity.</p>
-<p><strong>Q: But it used to work before updating Rewired to 1.1.3.0+:</strong></p>
-<p>It actually did have the same issue, but you just 
-  couldn’t see it because Rewired was never actually running in native mode when 
-  the 4.6 backend was enabled in versions prior to 1.1.3.0 because of an unrelated exception <br />
-  that made it fall back to Unity input silently. This exception was due to an unrelated issue involving 
-  reflection when using the .NET 4.6 backend. The exception was silently swallowed forcing Rewired 
-  to run in UnityEngine.Input mode instead. In 1.1.3.0, the silent exception was fixed allowing native input to actually be initialized revealing the new .NET 4.6 bug. Native input never worked when using the 
-  4.6 .NET backend. The fact that older versions looked like they worked was 
-  just a fluke due to the unrelated exception preventing native input from being initialized.</p>
-<p><em>Beta versions and experimental features of Unity are not supported by Rewired.</em></p>
-<p>&nbsp;</p>
-<hr />
-<h3><a name="net46-windows-freeze-on-exit" id="net46-windows-freeze-on-exit"></a>Windows, .NET 4.6 experiemental backend: Application freezes on exit</h3>
-<p>As of Unity 2017.2.0f3, when the .NET 4.6 experimental backend is enabled in Windows, the application will freeze forever on exit (closing via the X window button or Alt + F4). The error occurrs outside Rewired's code after it has already shut down. Unity has confirmed this bug in the .NET 4.6 backend but no ETA for a fix is known.</p>
-<p><strong>Q: But it used to work before updating Rewired to 1.1.3.0+:</strong></p>
-<p>It actually did have the same issue, but you just 
-  couldn’t see it because Rewired was never actually running in native mode when 
-  the 4.6 backend was enabled in versions prior to 1.1.3.0 because of an unrelated exception <br />
-  that made it fall back to Unity input silently. This exception was due to an unrelated issue involving 
-  reflection when using the .NET 4.6 backend. The exception was silently swallowed forcing Rewired 
-  to run in UnityEngine.Input mode instead. In 1.1.3.0, the silent exception was fixed allowing native input to actually be initialized revealing the new .NET 4.6 bug. Native input never worked when using the 
-  4.6 .NET backend. The fact that older versions looked like they worked was 
-  just a fluke due to the unrelated exception preventing native input from being initialized.</p>
-<p><em>Beta versions and experimental features of Unity are not supported by Rewired.</em></p>
-<p>&nbsp;</p>
-<hr />
-<h3><a name="unity-2011-dot-net-46-editor-errors" id="unity-2011-dot-net-46-editor-errors"></a>Windows, .NET 4.6 experimental backend: Editor corruption in Unity 2017.1</h3>
-<p>The .NET 4.6 experimental backend contains a major bug that affects Rewired's ability to run in the editor. The 2nd time you press Play in the editor, it will throw thousands of exceptions and cause the editor to become corrupt until quit and restart. This bug has been reported to Unity.</p>
-<p><strong>Update:</strong> Unity fixed the bug in Unity 2017.1.p4.</p>
-<p>More information about this bug can be found here:</p>
-<ul>
-  <li><a href="https://forum.unity3d.com/threads/rewired-advanced-input-for-unity.270693/page-66#post-3116639" title="https://forum.unity3d.com/threads/rewired-advanced-input-for-unity.270693/page-66#post-3116639" target="_blank">https://forum.unity3d.com/threads/rewired-advanced-input-for-unity.270693/page-66#post-3116639</a></li>
-  <li><a href="https://forum.unity3d.com/threads/rewired-advanced-input-for-unity.270693/page-66#post-3116993" title="https://forum.unity3d.com/threads/rewired-advanced-input-for-unity.270693/page-66#post-3116993" target="_blank">https://forum.unity3d.com/threads/rewired-advanced-input-for-unity.270693/page-66#post-3116993</a></li>
-</ul>
-<p>The only workaround is to disable native input by setting the Primary Input Source for the editor platform you are using to Unity in the Rewired Input Manager -&gt; Settings page. By doing this, you will lose access to all the special features and benefits native input provides.</p>
-<p><strong>Q: But it used to work before updating Rewired to 1.1.3.0+:</strong></p>
-<p>It actually did have the same issue, but you just 
-  couldn’t see it because Rewired was never actually running in native mode when 
-  the 4.6 backend was enabled in versions prior to 1.1.3.0 because of an unrelated exception <br />
-  that made it fall back to Unity input silently. This exception was due to an unrelated issue involving 
-  reflection  when using the .NET 4.6 backend. The exception was silently swallowed forcing Rewired 
-  to run in UnityEngine.Input mode instead. In 1.1.3.0, the silent exception was fixed allowing native input to actually be initialized revealing the new .NET 4.6 bug. Native input never worked when using the 
-  4.6 .NET backend. The fact that older versions looked like they worked was 
-  just a fluke due to the unrelated exception preventing native input from being initialized.</p>
-<p><em>Beta versions and experimental features of Unity are not supported by Rewired.</em></p>
+<h3><a name="windows-directinput-joysticks-not-detected-net46" id="windows-directinput-joysticks-not-detected-net46"></a>Windows Standalone, Direct Input: Joysticks not detected when using .Net 4.6 scripting backend</h3>
+<p>Direct Input was moved into a native DLL in Rewired 1.1.22.0 and therefore no longer has this issue which was caused by the lack of support of a particular IL instruction in the .Net 4.6 scripting backend.</p>
+<p><strong>Solution:</strong> <a href="Updating.html">Update Rewired</a>.</p>
 <p>&nbsp;</p>
 <hr />
 <h3><a name="windows-editor-oculus-touch-crash" id="windows-editor-oculus-touch-crash"></a>Windows Editor: Crash in Unity 5.6+ with Oculus Touch</h3>
@@ -298,8 +260,8 @@
 <h3><a name="xinput-device-name" id="apple-tv-gyro2"></a>Windows Platforms: XInput devices on Windows appear as &quot;XInput Gamepad&quot;</h3>
 <p>On Windows, with Use XInput enabled, and always on Windows App Store and Windows 10 Universal builds, there's no way to differentiate one XInput controller type from another. To XInput, everything is simply Gamepad with an id of 0-3. This is not a Rewired issue, it is a design decision by Microsoft.<br />
   <br />
-  There is no possible way to associate an   XInput id to the matching HID device to get its name and make it be recognized   as a specific controller. Because of this, you cannot identify an XInput controller by   name in Windows when XInput is enabled. This also affects which controller maps   are loaded for this joystick in Windows when using XInput. Since the device is   simply and Xinput device, it will be loaded from the XBox 360 controller   definition, not the Logitech F310, for example. 
-  (However, if you create your controller maps using the Dual Analog Gamepad Template, you don't even need to worry about this.)
+  There is no possible way to associate an   XInput id to the matching HID device to get its name and make it be recognized   as a specific controller. Because of this, you cannot identify an XInput controller by   name in Windows when XInput is enabled. This also affects which controller maps   are loaded for this joystick in Windows when using XInput. Since the device is   simply an Xinput device, it will be loaded from the XBox 360 controller   definition, not the Logitech F310, for example. 
+  (However, if you create your controller maps using the Gamepad Template, you don't even need to worry about this.)
 <p>The only way you will be able to identify these   controllers by name is to disable Use XInput in the Rewired Input Manager (applies to Windows Standalone only, not Windows App Store or Windows 10 Universal -- XInput cannot be disabled on these platforms). Once you do that, you introduce new   issues/limitations:</p>
 
 <ol>
@@ -313,7 +275,7 @@
 <h3><a name="windows-xinput-devices-use-x360-map" id="windows-xinput-devices-use-x360-map"></a>Windows Platforms: All XInput devices use the Xbox 360 Controller map when &quot;Use XInput&quot; is enabled</h3>
 <p>As explained in the <a href="#xinput-device-name">previous topic</a>, when Use XInput is enabled and always on Windows App Store and Windows 10 Universal builds, there is no way to differentiate one XInput device from another by name or product/vendor id. Therefore, all XInput devices will use the Xbox 360 Controller map on Windows when Use XInput is enabled. This will match all XInput devices, generic or not, and will provide full coverage of all XInput devices. You cannot map these devices based on the individual device type such as Xbox One or Logitech F310 when using XInput because the device cannot be identified as as specific device type  but rather simply as an XInput gamepad. All XInput gamepads will use Xbox 360 Controller profile when Use XInput is enabled.</p>
 <p>If you disable Use XInput, you will get device-specific identification and recognition (Windows Standalone only, not Windows App Store or Windows 10 Universal), but you will also have the drawbacks <a href="#xinput-device-name">explained in the previous topic</a>.</p>
-<p>There is rarely ever a need to map these controllers individually by using the specific device-type maps. Just create your Joystick Map using the Dual Analog Gamepad Template and it will cover <a href="SupportedControllers.html">all gamepads listed here</a> regardless of whether or not you have Use XInput enabled.</p>
+<p>There is rarely ever a need to map these controllers individually by using the specific device-type maps. Just create your Joystick Map using the Gamepad Template and it will cover <a href="SupportedControllers.html">all gamepads listed here</a> regardless of whether or not you have Use XInput enabled.</p>
 <p>&nbsp;</p>
 <hr />
 <h3><a name="more-than-4-xbox-controllers" id="dll-not-found-xinput6"></a>More than 4 XBox controllers cannot be used at the same time</h3>
@@ -371,18 +333,86 @@
 <p>With newer firmware versions, the Nvidia Shield Controller has major problems on Raw Input and Direct Input  which cause massive slowdowns making the controller essentially unusable. The only way to support the controller on Windows is to enable Use XInput which is not subject to the same issues. The Nvidia Shield Controller can no longer be safely used on Windows Standalone without Use XInput enabled until Nvidia fixes the firmware problems. If the controller is used without Use XInput enabled, the frame rate will drop to an extremely low level. There is no possible workaround to this issue.</p>
 <p>&nbsp;</p>
 <hr />
+<h3><a name="net46-windows-freeze-on-exit" id="net46-windows-freeze-on-exit"></a>Windows Standalone, .NET 4.6 experiemental backend: Application freezes on exit in Unity 2017</h3>
+<p><strong>Update:</strong> This Unity bug was fixed at some point in the Unity 2017 branch and does not appear in Unity 2017.4.14f1. The exact version where they fixed the bug is not known. It does not appear in Unity 2018.1.0f3 or later.</p>
+<p><strong>Solution:</strong> Update to the Unity 2017.4.14f1+.</p>
+<p>As of Unity 2017.2.0f3, when the .NET 4.6 experimental backend is enabled in Windows, the application will freeze forever on exit (closing via the X window button or Alt + F4). The error occurrs outside Rewired's code after it has already shut down. Unity has confirmed this bug in the .NET 4.6 backend but no ETA for a fix is known.</p>
+<p><strong>Q: But it used to work before updating Rewired to 1.1.3.0+:</strong></p>
+<p>It actually did have the same issue, but you just 
+  couldn’t see it because Rewired was never actually running in native mode when 
+  the 4.6 backend was enabled in versions prior to 1.1.3.0 because of an unrelated exception <br />
+  that made it fall back to Unity input silently. This exception was due to an unrelated issue involving 
+  reflection when using the .NET 4.6 backend. The exception was silently swallowed forcing Rewired 
+  to run in UnityEngine.Input mode instead. In 1.1.3.0, the silent exception was fixed allowing native input to actually be initialized revealing the new .NET 4.6 bug. Native input never worked when using the 
+  4.6 .NET backend. The fact that older versions looked like they worked was 
+  just a fluke due to the unrelated exception preventing native input from being initialized.</p>
+<p><em>Beta versions and experimental features of Unity are not supported by Rewired.</em></p>
+<p>&nbsp;</p>
+<hr />
+<h3><a name="unity-2011-dot-net-46-editor-errors" id="unity-2011-dot-net-46-editor-errors"></a>Windows Standalone, .NET 4.6 experimental backend: Editor corruption in Unity 2017.1</h3>
+<p><strong>Update:</strong> Unity fixed the bug in Unity 2017.1.p4.</p>
+<p><strong>Solution:</strong> Update to Unity 2017.1.p4+.</p>
+<p>The .NET 4.6 experimental backend contains a major bug that affects Rewired's ability to run in the editor. The 2nd time you press Play in the editor, it will throw thousands of exceptions and cause the editor to become corrupt until quit and restart. This bug has been reported to Unity.</p>
+<p>More information about this bug can be found here:</p>
+<ul>
+  <li><a href="https://forum.unity3d.com/threads/rewired-advanced-input-for-unity.270693/page-66#post-3116639" title="https://forum.unity3d.com/threads/rewired-advanced-input-for-unity.270693/page-66#post-3116639" target="_blank">https://forum.unity3d.com/threads/rewired-advanced-input-for-unity.270693/page-66#post-3116639</a></li>
+  <li><a href="https://forum.unity3d.com/threads/rewired-advanced-input-for-unity.270693/page-66#post-3116993" title="https://forum.unity3d.com/threads/rewired-advanced-input-for-unity.270693/page-66#post-3116993" target="_blank">https://forum.unity3d.com/threads/rewired-advanced-input-for-unity.270693/page-66#post-3116993</a></li>
+</ul>
+<p>The only workaround is to disable native input by setting the Primary Input Source for the editor platform you are using to Unity in the Rewired Input Manager -&gt; Settings page. By doing this, you will lose access to all the special features and benefits native input provides.</p>
+<p><strong>Q: But it used to work before updating Rewired to 1.1.3.0+:</strong></p>
+<p>It actually did have the same issue, but you just 
+  couldn’t see it because Rewired was never actually running in native mode when 
+  the 4.6 backend was enabled in versions prior to 1.1.3.0 because of an unrelated exception <br />
+  that made it fall back to Unity input silently. This exception was due to an unrelated issue involving 
+  reflection  when using the .NET 4.6 backend. The exception was silently swallowed forcing Rewired 
+  to run in UnityEngine.Input mode instead. In 1.1.3.0, the silent exception was fixed allowing native input to actually be initialized revealing the new .NET 4.6 bug. Native input never worked when using the 
+  4.6 .NET backend. The fact that older versions looked like they worked was 
+  just a fluke due to the unrelated exception preventing native input from being initialized.</p>
+<p><em>Beta versions and experimental features of Unity are not supported by Rewired.</em></p>
+<p>&nbsp;</p>
+<hr />
 <h3><a name="uwp-gamepads-appear-twice" id="uwp-gamepads-appear-twice"></a>Windows 10 Universal: Certain gamepads appear twice when HID device support is enabled</h3>
 <p>Microsoft has apparently started mapping non-Xbox gamepads like the Sony DualShock 4 to make them appear as XInput devices through their UWP Windows.Gaming.Input system. This has the side effect that, if you enable the application to allow the use of HID input devices in the Package.appxmanifest, the DualShock 4 will show up as 2 devices at the same time -- an XInput gamepad and the HID DualShock 4 gamepad. While true XInput gamepads provide a way to identify them as such through the HID system, Microsoft has provided no way to determine that these pseudo-XInput devices (HID devices are being  treated as XInput devices) are being handled by XInput, so there is no way to programatically filter out these duplicate devices. The only workaround is to disable HID device support. You can either do this by removing HID support from the package manifest in the Visual Studio build project or by disabling the <a href="RewiredEditor.html#settings-uwp">&quot;Support HID Devices&quot; option in the Rewired Input Manager -&gt; Settings -&gt; Windows UWP page</a>. This allows you to choose to support the Gamepad (XInput) system and/or the HID system for input devices. This is still not ideal, but it at least gives you the option to disable XInput to allow for wider device support without risking duplicate devices, though disabling XInput will also disable support for controller vibration. There is no perfect solution because Microsoft simply has not provided the ability to get the necessary information to allow devices to be filtered properly.</p>
 <p>&nbsp;</p>
 <hr />
 <h3><a name="uwp-il2cpp-controller-disconnect-crash" id="uwp-il2cpp-controller-disconnect-crash"></a>Windows 10 Universal IL2CPP: Crash when disconnecting controllers</h3>
-<p>There are two different disconnect crash scenarios, each with its own circumstances:</p>
-<p><strong>Scenario 1: Non-XInput controllers</strong></p>
+<p>There are three different disconnect crash scenarios, each with its own circumstances:</p>
+<p><strong>Scenario 1: XInput controllers on Unity 2018.2.0 - 2018.2.18</strong></p>
+<p><strong>Severity: <span  style="color: #ff0000">Critical</span></strong></p>
+<p><strong style="color: #008800">This issue was fixed by Unity in version 2018.2.19. Update to Unity 2018.2.19+.</strong><strong><span  style="color: #ff0000"><br />
+</span></strong></p>
+<p>Starting with Unity 2018.2.0, XInput-compatible controllers will crash the application when unplugged if the application is started with any XInput-compatible controller connected. This is a bug in Unity, not Rewired, and there is no possible workaround.</p>
+<p>This bug occurs when any script or library makes a call to any part of the Windows.Gaming.Input.Gamepad API. Simply making this call will result in Unity crashing internally the next time a controller is unplugged. Use of Windows.Gaming.Input.Gamepad is absolutely required in order to get input natively from gamepads in Windows UWP.</p>
+<p>You can easily reproduce this by creating a new Unity project and adding this script to a GameObject:</p>
+<pre class="code">using UnityEngine;
+
+public class GamepadTest : MonoBehaviour {
+#if ENABLE_WINMD_SUPPORT
+    void OnGUI() {
+        GUILayout.Label("Gamepad Count: " + Windows.Gaming.Input.Gamepad.Gamepads.Count);
+    }
+#endif
+}</pre>
+<p>Build the application and launch it with a gamepad connected. Unplug it and the application will crash with the following stack trace:</p>
+<pre class="code">UnityPlayer.dll!dynamic_array&lt;class GameControllers::Gamepads::XboxGamepad,0&gt;::erase(class GameControllers::Gamepads::XboxGamepad *,class GameControllers::Gamepads::XboxGamepad *)
+UnityPlayer.dll!GameControllers::Gamepads::XboxGamepads::UpdateCurrentGamepadList(void)
+UnityPlayer.dll!GameControllers::Gamepads::XboxGamepads::GetCurrentGamepads(void)
+UnityPlayer.dll!GameControllers::Gamepads::ProcessGamepadInput(class InputManager &,class std::map&lt;unsigned int,int,struct std::less&lt;unsigned int&gt;,class std::allocator&lt;struct std::pair&lt;unsigned int const ,int&gt; &gt; &gt; &,struct dynamic_array&lt;unsigned int,0&gt; &)
+UnityPlayer.dll!Input::PreProcess(class Vector2f const &)
+UnityPlayer.dll!UnityPlayer::AppCallbacks::DoPerformUpdateAndRender(void)
+UnityPlayer.dll!UnityPlayer::AppCallbacks::PerformUpdateAndRender(void)
+UnityPlayer.dll!UnityPlayer::AppCallbacks::_AppThreadImplementation(void *)
+UnityPlayer.dll!UnityPlayer::AppCallbacks::_AppThread(void *)
+kernel32.dll!BaseThreadInitThunk()
+ntdll.dll!RtlUserThreadStart()</pre>
+<p>This affects the .NET scripting backend and the IL2CPP scripting backend.</p>
+<p>Solution: Update to Unity 2018.2.19+.</p>
+<p><strong>Scenario 2: Non-XInput controllers</strong></p>
 <p>As of Unity 5.3.4f1, after enabling support for standard HID joysticks in the Package.appxmanifest, Unity may crash when disconnecting a non-XInput controller (also happens with XInput controllers in Untiy 2017). This is a bug in Unity, not Rewired and there is no possible workaround if you want to support any controllers besides XInput controllers. (To disable support for non-XInput controllers, remove the <a href="SpecialPlatformSupport.html#uwp-enabling-hid-joystick-support">tags added to the Package.appxmanifest mentioned here</a>.) This bug has been reported to Unity, but so far no fix has been announced.</p>
 <p>This issue does not affect Windows 10 Universal builds when using the .NET scripting backend.</p>
 <p><strong>Update:</strong> This bug has been fixed as of Unity 5.3.5p1.<br />
   <strong>Update 2:</strong> This bug has resurfaced in Unity 2017.1.</p>
-<p><strong>Scenario 2: Xbox One S controller</strong></p>
+<p><strong>Scenario 3: Xbox One S controller</strong></p>
 <p>As of Unity 2017.1, after enabling support for standard HID joysticks in the Package.appxmanifest and disabling Use XInput in the <a href="RewiredEditor.html#Settings">Rewired Editor -&gt; Settings for Windows 10 UWP</a>, the application will always crash when disconnecting an Xbox One S controller. This issue comes from the Windows HID API used to get HID device events. When Use XInput is enabled, the Xbox One S controller will be handled through the Windows.Gaming.Input API instead and no longer cause the crash.</p>
 <p>&nbsp;</p>
 <hr />
@@ -425,7 +455,14 @@ Catastrophic failure while running rrw: Mono.Cecil.AssemblyResolutionException: 
 <p>&nbsp;</p>
 <h2><a name="osx" id="osx"></a>OSX:</h2>
 <p>&nbsp;</p>
-<h3><a name="osx-net46-initialization-exception" id="osx-net46-initialization-exception"></a>OSX, .NET 4.6 experimental backend: Throws exception on initialization </h3>
+<h3><a name="osx-standalone-il2cpp" id="osx-standalone-il2cpp2"></a>OSX, IL2CPP: Rewired falls back to Unity input</h3>
+<p>Support for IL2CPP on desktop platforms was added in Rewired 1.1.22.0.</p>
+<p><strong>Solution:</strong> <a href="Updating.html">Update Rewired</a>.</p>
+<p>&nbsp;</p>
+<hr />
+<h3><a name="osx-net46-initialization-exception" id="osx-net46-initialization-exception"></a>OSX, .NET 4.6 experimental backend: Throws exception on initialization  in Unity 2017.1 - 2017.3</h3>
+<p><strong>Update:</strong> The Unity bug was fixed in Unity 2017.4.1f1. Any version of Unity after that should work correctly.</p>
+<p><strong>Solution:</strong> Update to Unity 2017.4.1f1+.</p>
 <p>As of Unity 2017.2.0f3, when the .NET 4.6 experimental backend is enabled in OSX, an exception will be thrown on initialization causing Rewired to not function. This exception is due to a bug in the .NET 4.6 experimental backend that prevents all P/Invoke calls from functioning, always throwing a DllNotFoundException. The exact same call works using the .NET 3.5 backend while the 4.6 backend fails. This bug has been reported to Unity.</p>
 <p>Due to the severity of this bug, until Unity fixes it, it is impossible for Rewired to use native input on OSX with the .NET 4.6 backend enabled. The only workaround is to disable native input by setting the Primary Input Source for the  platform to Unity in the Rewired Input Manager -&gt; Settings -&gt; OSX page. By doing this, you will lose access to all the special features and benefits native input provides.</p>
 <p><strong>Q: But it used to work before updating Rewired to 1.1.3.0+:</strong></p>
@@ -443,24 +480,52 @@ Catastrophic failure while running rrw: Mono.Cecil.AssemblyResolutionException: 
 <p>&nbsp;</p>
 <h2><a name="linux" id="linux"></a>Linux:</h2>
 <p>&nbsp;</p>
+<h3><a name="linux-standalone-il2cpp" id="linux-standalone-il2cpp"></a>Linux, IL2CPP: Rewired falls back to Unity input</h3>
+<p>As of Unity 2018.3.0, Unity does not support IL2CPP on Linux. If/when IL2CPP support is added to Unity, Rewired versions of 1.1.22.0+ should automatically just work. Obviously this cannot be tested until Unity adds support for the platform.</p>
+<p>&nbsp;</p>
+<hr />
 <h3><a name="keyboard-stuck-linux" id="keyboard-stuck-linux"></a>Keyboard keys stuck on Linux in Unity 5.1.1</h3>
+<p>Rewired uses UnityEngine.Input.GetKey to get keyboard input on Linux. Underlying issues in UnityEngine.Input's keyboard handling are inherited by Rewired.</p>
 <p>This is not a Rewired issue, it's a Unity bug:<br />
   <a href="http://forum.unity3d.com/threads/unity-5-1-1-broke-input-for-linux-standalone.335113/">http://forum.unity3d.com/threads/unity-5-1-1-broke-input-for-linux-standalone.335113/</a></p>
 <p>Update to Unity 5.1.2 to fix it.</p>
 <p></p>
+<hr />
+<h3><a name="linux-keyboard-repeat-bug-builds" id="linux-keyboard-repeat-bug-builds"></a>Keyboard keys repeat when held on Linux in builds
+</h3>
+<p></p>
+<p>Rewired uses UnityEngine.Input.GetKey to get keyboard input on Linux. Underlying issues in UnityEngine.Input's keyboard handling are inherited by Rewired.</p>
+<p>This bug only affects builds on Linux, not the Linux editor. It also only affects certain versions of Linux.</p>
+<p>Unity has already patched the issue in 2018.2.0b2. The change causing this bug was added in some version of Unity after 2017.1.0f3 (see tests below).</p>
+<p>UnityEngine.Input.GetKey now toggles on and off in rapid succession frame by frame after a short key-repeat delay. This makes it so that the ButtonDown state becomes true every few milliseconds. Because Unity is telling Rewired that the key going on and off in rapid success, Rewired translates this into GetButtonDown and GetButtonUp every few frames. There's absolutely no way around this other than writing a native keyboard library for Linux and replacing UnityEngine.Input for this portion of input. This may be added in a future release and this page will be updated.<br />
+</p>
+<p>Results of tests:</p>
+<p>Ubuntu 14.04 + Unity 5.0.0f4 = No issue<br />
+  Ubuntu 14.04 + Unity 2017.1.0f3 = No issue<br />
+  Ubuntu 14.04 + Unity 2017.4.2f2 = No issue<br />
+  Ubuntu 14.04 + Unity 2018.1.0f1 = No issue<br />
+  Ubuntu 14.04 + Unity 2018.2.0b2 = No issue<br />
+  <br />
+  Ubuntu 17.04 + Unity 5.0.0f4 = No issue<br />
+  Ubuntu 17.04 + Unity 2017.1.0f3 = No issue<br />
+  Ubuntu 17.04 + Unity 2017.4.2f2 = <span style="color: red">PROBLEM</span><br />
+  Ubuntu 17.04 + Unity 2018.1.0f1 = <span style="color: red">PROBLEM</span><br />
+  Ubuntu 17.04 + Unity 2018.2.0b2 = No issue <span style="color: #090">&lt;- Unity patched the issue</span></p>
 <p>&nbsp;</p>
 <hr />
 <p>&nbsp;</p>
 <h2><a name="unity-editor" id="unity-editor"></a>Unity Editor (all platforms):</h2>
 <p>&nbsp;</p>
 <h3><a name="increased-compile-play-time-editor" id="increased-compile-play-time-editor"></a>Rewired increases compile time and load time after pressing Play in the editor</h3>
-<p>The additional load time can be attributed entirely to Unity loading the serialized data from Rewired's <a href="SupportedControllers.html">many controller definitions</a> which are used to recognize, map, and calibrated known controllers. The simple fact that the controller data files are linked from an object field in the Rewired Input Manager GameObject's component causes Unity to load those objects regardless of whether the GameObject is enabled or not. Unfortunately there's nothing that can be done to reduce it except to <a href="HowTos.html#excluding-controller-definitions">remove controller definitions</a> to reduce the number that have to be loaded. <br />
+<p>The additional load time can be attributed entirely to Unity loading the serialized data from Rewired's <a href="SupportedControllers.html">many controller definitions</a> which are used to recognize, map, and calibrate known controllers. The simple fact that the controller data files are linked from an object field in the Rewired Input Manager GameObject's component causes Unity to load those objects regardless of whether the GameObject is enabled or not. Unfortunately there's nothing that can be done to reduce it except to <a href="HowTos.html#excluding-controller-definitions">remove controller definitions</a> to reduce the number that have to be loaded. <br />
   <br />
-  Unity has to deserialize all the controller definition data every time you press Play. There isn't any way to both keep the support for all these controllers and get the startup time any faster without completely overhauling the controller definition system to use a database or some other means to store all this data. Doing that would bring all kinds of other challenges and issues because it would have to be cross-platform and work on every single platform Unity supports (22+ now) and would invalidate any custom controller definitions created by users. Rewired was written using the &quot;Unity way&quot; of doing things, using their data storage structures, built-in systems, and editors. Unfortunately, this means I don't have control over every single aspect of the process.<br />
+  Unity has to deserialize all the controller definition data every time you press Play or recompile scripts. There isn't any way to both keep the support for all these controllers and get the startup time any faster without completely overhauling the controller definition system to use a database or some other means to store all this data. Doing that would bring all kinds of other challenges and issues because it would have to be cross-platform and work on every single platform Unity supports (22+ now) and would invalidate any custom controller definitions created by users. Rewired was written using the &quot;Unity way&quot; of doing things, using their data storage structures, built-in systems, and editors. Unfortunately, this means I don't have control over every single aspect of the process.<br />
   <br />
   While this increase in startup time may be significant to a blank project, in a real game project, it's likely that the game itself's startup time would be significantly greater than this and therefore the perceived impact would be much smaller vs a blank scene.<br />
   <br />
-  It is worth noting that there is no perceivable difference in load time in a final build. A completely blank scene and a scene with a disabled Rewired Input Manager both start instantaneously (Unity splash screen disabled.) This is only an issue in the Unity editor.</p>
+  It is worth noting that there is no perceivable difference in load time in a final build. A completely blank scene and a scene with an enabled Rewired Input Manager both start instantaneously (Unity splash screen disabled.) This is only an issue in the Unity editor.</p>
+<p><strong>How to temporarily remove Controller definitions to speed up development</strong></p>
+<p>The fewer controllers supported, the less the delay when the app domain is rebuilt. Just click the &quot;ControllerDataFiles&quot; field in the Rewired Input Manager inspector which will take you to the default ControllerDataFiles object in the Rewired directory, copy the existing ControllerDataFiles, move the copy outside the Rewired folder, link the new ControllerDataFiles in the Rewired Input Manager inspector, then go to the new ControllerDataFiles inspector and remove all the controllers you don't need while doing your development. You can pare this down to like 10 controllers (Xbox, DS4, etc.) and Rewired will add zero extra startup time. Remember to link back the original ControllerDataFiles in the Rewired Input Manager before building so all controllers are supported.</p>
 <p>&nbsp;</p>
 <hr />
 <h3><a name="serialized-data-corruption-after-import" id="serialized-data-corruption-after-import"></a>Serialized data corruption after importing Rewired </h3>
@@ -503,12 +568,28 @@ Catastrophic failure while running rrw: Mono.Cecil.AssemblyResolutionException: 
 <p>More information and a patch:<br />
   <a href="http://forum.unity3d.com/threads/rewired-advanced-input-for-unity.270693/page-20#post-2216921">http://forum.unity3d.com/threads/rewired-advanced-input-for-unity.270693/page-20#post-2216921</a></p>
 <p>&nbsp;</p>
+<hr />
+<h3><a name="editor-is-compiling-gc-alloc" id="editor-is-compiling-gc-alloc"></a>InputManager_Base.Update generates 17 bytes of GC Alloc per frame in the Profiler</h3>
+<p>This is normal and unavoidable  and only happens in the UnityEditor. It is due to a bug/change in Unity 2017.</p>
+<p>The InputManager.cs script included in the project calls UnityEditor.EditorApplication.isCompiling every frame in the Editor. This call generates a 17 byte memory allocation every time. This does not generate garbage in Unity 4 or 5 but does in Unity 2017.</p>
+<div data-redactor="1">This call is required to be able to detect when the Editor is compiling for various needs in the Editor. Again, it happens only in the Unity Editor, not in builds. Rewired generates zero garbage per frame in the normal loop (apart from doing things like control remapping, etc.)</div>
+<p>&nbsp;</p>
+<hr />
+<h3><a name="data-files-missing" id="data-files-missing"></a>&quot;Data Files is missing&quot; error</h3>
+<p>This can happen for two reasons:</p>
+<ol>
+  <li> The Data Files field in the Rewired Input Manager inspector is blank.</li>
+  <li>Serialization errors in some versions of Unity after upgrading Rewired or importing a ControllerDataFiles that replaces the original while the Unity Editor is open.</li>
+  </ol>
+<p>If #1, link the Data Files field to the ControllerDataFiles included with Rewired at Assets/Rewired/Internal/Data/Controllers/ControllerDataFiles.</p>
+<p>If #2, close the Unity Editor and re-launch it.</p>
+<p>&nbsp;</p>
 <p></p>
 <hr />
 <p>&nbsp;</p>
 <h2><a name="android" id="android"></a>Android:</h2>
 <p>&nbsp;</p>
-<h3><a name="android-remotes" id="windows-app-store-u"></a>Android remotes are not detected  (Nexus Player, Amazon Fire TV, Razer Forge TV, etc.)</h3>
+<h3><a name="android-remotes" id="windows-app-store-u"></a>Remotes are not detected  (Nexus Player, Amazon Fire TV, Razer Forge TV, etc.)</h3>
 <p>These remotes may not work on versions of Unity 5.02 or greater. Unity introduced a new bug in this version that makes the remote appear with a NULL name in the Input.GetJoystickNames array, which also happens to be used to fill the array entry when a controller is no longer connected. There is no way to identify these remotes because of this. The bug still exists as of 5.3.4f1. It has been reported and this information will be updated if a fix is issued.</p>
 <p>The remotes will however still return keycodes through UnityEngine.Input. Most remotes use the keyboard arrow keycodes for movement. In addition, there are various workarounds possible using Custom Controllers such as shown in the following code example:</p>
 <pre class="code"><span class="comment">// Copyright (c) 2016 Augie R. Maddox, Guavaman Enterprises. All rights reserved.
@@ -610,8 +691,18 @@ public class RewiredCustomController_AndroidRemote : MonoBehaviour {
 <p></p>
 <hr />
 <p></p>
-<h3><a name="android-unity-joystick-bugs-v5_5" id="android-unity-joystick-bugs-v5_5"></a>Android: Joysticks do not sent connect/disconnect events, multiple joysticks appear when the same joystick is unplugged and re-plugged</h3>
+<h3><a name="android-unity-joystick-bugs-v5_5" id="android-unity-joystick-bugs-v5_5"></a>Joysticks do not sent connect/disconnect events, multiple joysticks appear when the same joystick is unplugged and re-plugged</h3>
 <p>Unity introduced new bugs in Unity 5.5.0 that cause joysticks to not disappear on disconnect and create new additional joysticks every re-connect. This bug was fixed in 5.5.2p2 and 5.6.0b6. Upgrade to any Unity version after those and the issue will not be present.</p>
+<p>&nbsp;</p>
+<hr />
+<h3><a name="android-il2cpp-ndk-compiler-bug" id="android-il2cpp-ndk-compiler-bug"></a>IL2CPP: Editor crashes or takes a very long time to compile or stalls forever</h3>
+<p>A bug in Android NDK r13b causes compilation to take an extremely long time or stall forever. The only solution to this bug is to update to a newer version of Rewired or the NDK.</p>
+<p>The NDK bug is known to affect these versions of Rewired:</p>
+<ul>
+  <li>1.1.12.1</li>
+  <li>1.1.13.0</li>
+  </ul>
+<p>Rewired 1.1.14.0+ is known to work correctly.</p>
 <p>&nbsp;</p>
 <hr />
 <h3>&nbsp;</h3>
@@ -629,7 +720,7 @@ public class RewiredCustomController_AndroidRemote : MonoBehaviour {
 <hr />
 <h2><a name="xbox-one" id="xbox-one"></a>Xbox One</h2>
 <p>&nbsp;</p>
-<h3><a name="xbox-one-controller-connections-error" id="xbox-one-controller-connections-error"></a>Xbox One: Controller connections and disconnections do not work</h3>
+<h3><a name="xbox-one-controller-connections-error" id="xbox-one-controller-connections-error"></a>Controller connections and disconnections do not work</h3>
 <p>There have been reports of controller connections and disconnections not working on Xbox One builds in Unity 2017.3. This issue is not with Rewired but with the underlying Unity Xbox One input event used to detect controller connections and disconnections. Apparently, Unity's Build and Run with Push method makes any
   build consecutive to the   first one exhibit broken controller connections. Changing build method to   Package seems to make the game build properly.<br />
 </p>
@@ -649,17 +740,17 @@ public class RewiredCustomController_AndroidRemote : MonoBehaviour {
 <hr />
 <p>&nbsp;</p>
 <h2><a name="sdl2" id="sdl2"></a>SDL2:</h2>
-<h3><a name="sdl2-osx-editor-haptic-feedback-not-supported" id="sdl2-osx-editor-haptic-feedback-not-supported"></a>SDL2:  OSX - Editor does not support haptic feedback</h3>
+<h3><a name="sdl2-osx-editor-haptic-feedback-not-supported" id="sdl2-osx-editor-haptic-feedback-not-supported"></a>OSX - Editor does not support haptic feedback</h3>
 <p>Due to a bug in SDL/Unity that causes an editor crash when enabled, haptic feedback (vibration) is not supported in the OSX Editor.</p>
 <p>Note: This issue only applies if SDL2 is selected as the input source for OSX Standalone builds.</p>
 <p>&nbsp;</p>
 <hr />
-<h3><a name="sdl2-osx-xbox-360-controller-no-vibration" id="sdl2-osx-xbox-360-controller-no-vibration"></a>SDL2: OSX - XBox 360 Controller does not support vibration</h3>
+<h3><a name="sdl2-osx-xbox-360-controller-no-vibration" id="sdl2-osx-xbox-360-controller-no-vibration"></a>OSX - XBox 360 Controller does not support vibration</h3>
 <p>SDL2 does not provide vibration support for the XBox 360 Controller on OSX.</p>
 <p>Note: This issue only applies if SDL2 is selected as the input source for OSX Standalone builds.</p>
 <p>&nbsp;</p>
 <hr />
-<h3><a name="sdl2-windows-xbox-360-vibration-motors" id="sdl2-windows-xbox-360-vibration-motors"></a>SDL2: Windows - XBox 360 Controller does not allow independent control of vibration motors</h3>
+<h3><a name="sdl2-windows-xbox-360-vibration-motors" id="sdl2-windows-xbox-360-vibration-motors"></a>Windows - XBox 360 Controller does not allow independent control of vibration motors</h3>
 <p>SDL2's haptic feedback system only accounts for a single motor for rumble devices.</p>
 <p>Note: This issue only applies if SDL2 is selected as the input source for Windows Standalone builds.</p>
 <p></p>
@@ -668,7 +759,7 @@ public class RewiredCustomController_AndroidRemote : MonoBehaviour {
 <p></p>
 <h2><a name="steam" id="steam"></a>Steam</h2>
 <p></p>
-<h3><a name="steam-windows-tab-shift-keys-stuck-overlay" id="steam-windows-tab-shift-keys-stuck-overlay"></a>Steam: Windows - Tab and Shift keys get stuck on after opening Steam overlay using the keyboard</h3>
+<h3><a name="steam-windows-tab-shift-keys-stuck-overlay" id="steam-windows-tab-shift-keys-stuck-overlay"></a>Windows - Tab and Shift keys get stuck on after opening Steam overlay using the keyboard</h3>
 <p>When opening the Steam overlay with Shift + Tab key combination, the Shift and Tab keys will remain stuck on forever until the user presses each of these keys to release them.</p>
 <p>This is due to the fact that Rewired uses Raw Input for keyboard input. Steam does not forward the Raw Input key up events for these keys to the application when the overlay is opened, therefore Rewired cannot know that these keys were ever released.</p>
 <p>The only workaround at present is to disable Native Keyboard Handling in <a href="RewiredEditor.html#Settings">Rewired Editor -&gt; Settings -&gt; Windows</a>. This makes Rewired use Unity input for the keyboard input source. Unity input does not have this issue because it uses the older Windows keyboard API and Steam does forward the messages using this older API.</p>
@@ -680,7 +771,7 @@ public class RewiredCustomController_AndroidRemote : MonoBehaviour {
         
     </div>
   <div class="footer clearfix">
-   	<p class="left">Copyright &copy;2014-2016 <a href="http://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
+   	<p class="left">Copyright &copy;2014-2018 <a href="http://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
   	<p class="right"><a href="http://guavaman.com/projects/rewired" title="Return to Rewired Website">Return to Rewired Website</a></p>
   </div>
   <!-- end .content --></div>
