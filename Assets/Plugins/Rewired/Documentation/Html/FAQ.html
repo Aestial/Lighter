@@ -81,7 +81,8 @@
               <li><a href="Controllers.html">Controllers</a></li>
               <li><a href="ControllerMaps.html">Controller Maps</a></li>
               <li><a href="MapCategories.html">Map Categories</a></li>
-              <li><a href="ControllerMaps.html"></a><a href="Layouts.html">Layouts</a></li>
+              <li><a href="Layouts.html">Layouts</a></li>
+              <li><a href="ControllerTemplates.html">Controller Templates</a></li>
               <li><a href="CustomControllers.html">Custom Controllers</a></li>
             </ul>
             <strong>Extras:</strong>
@@ -94,6 +95,7 @@
             <strong>Misc:</strong>
             <ul>
 	          <li><a href="ComponentControls.html" title="Component Controls">Component Controls</a></li>
+	          <li><a href="PlayerControllers.html" title="Player Controllers">Player Controllers</a></li>
 	          <li><a href="InputMapper.html" title="Input Mapper">Input Mapper</a></li>
 	          <li><a href="UserDataStore.html" title="User Data Store">User Data Store</a></li>
             </ul>
@@ -158,6 +160,8 @@
       <li><a href="#default-dead-zone">My joystick's dead zone is too large/small. How do I change it?</a></li>
       <li><a href="#gesture-bindings">How can I bind an Action to a button short-press  and another Action to a long-press?</a></li>
       <li><a href="#nintendo-wiiu-adapter-driver">Can the Nintendo WiiU 4-player adapter be used without requiring users to install a driver?</a></li>
+      <li><a href="#nintendo-wiiu-adapter-desktop">Does Rewired support the official Nintendo WiiU adapter on desktop platforms?</a></li>
+      <li><a href="#set-mouse-cursor-position">Can Rewired set the mouse cursor position?</a></li>
       <li><a href="#source-code">Can I get the Rewired source code?</a></li>
       <li><a href="#seat-license">What does &quot;this extension requires one licence per seat&quot; mean?</a></li>
       <li><a href="#discounts">Do you offer educational or bulk license discounts?</a></li>
@@ -176,7 +180,7 @@
     <p>&nbsp;</p>
     <hr />
     <h3><a name="does-rewired-support-x-controller" id="does-rewired-support-x-controller"></a>Does Rewired support this controller?</h3>
-    <p>Usually, this question is asked about exotic controllers such as 3Dconnexion Space Mouse,  Arduino, Oculus Touch and Remote, HTC Vive, exotic VR controllers, or some other special-purpose controller that requires its own SDK to use. Rewired does not support such controllers directly. Any use of such controller would require you set up the company's SDK and use a <a href="CustomControllers.html">Custom Controller</a> to add support for the device. Even this may not work for all devices. (See <a href="#does-rewired-support-vr-controllers">this topic for information</a> on limited support for Oculus Touch and HTC Vive / OpenVR.)</p>
+    <p>Usually, this question is asked about exotic controllers such as Arduino, Oculus Touch and Remote, HTC Vive, exotic VR controllers, or some other special-purpose controller that requires its own SDK to use. Rewired does not support such controllers directly. Any use of such controller would require you set up the company's SDK and use a <a href="CustomControllers.html">Custom Controller</a> to add support for the device. Even this may not work for all devices. (See <a href="#does-rewired-support-vr-controllers">this topic for information</a> on limited support for Oculus Touch and HTC Vive / OpenVR.)</p>
 <p>Rewired is not a general-purpose, low-level API for working with any and all HID devices.</p>
 <p>See <a href="SupportedControllers.html">Supported Controllers</a> for more information.</p>
 <p>&nbsp;</p>
@@ -296,9 +300,9 @@
   <tr>
     <td valign="top">Sony DualShock 4</td>
     <td align="center" valign="top">Raw Input<br />
-      <span class="note">(Enhanced Device Support required)</span></td>
+      <span class="note">(<a href="RewiredEditor.html#settings-windows-enhanced-device-support">Enhanced Device Support</a> required)</span></td>
     <td align="center" valign="top">Native<br />
-      <span class="note">(Enhanced Device Support required, wired only)</span></td>
+      <span class="note">(<a href="RewiredEditor.html#settings-osx-enhanced-device-support">Enhanced Device Support</a> required, wired only)</span></td>
     <td align="center" valign="top">&mdash;</td>
     <td align="center" valign="top">&mdash;</td>
     <td align="center" valign="top">&mdash;</td>
@@ -388,6 +392,44 @@
 <p>It is not possible. The Nintendo WiiU adapter is not a standard HID device and   cannot use the default Windows HID driver. This is an issue with the device   because it was not designed for use on Windows / PCs. It cannot be used by any   program without a 3rd party driver installed that can make it appear as a   standard HID device. There is no way around this.</p>
 <p>&nbsp;</p>
 <hr />
+<h3><a name="nintendo-wiiu-adapter-desktop" id="nintendo-wiiu-adapter-desktop"></a>Does Rewired support the official Nintendo WiiU adapter on desktop platforms?</h3>
+<p>Rewired <a href="SupportedControllers.html">does not provide extended support</a> for the Nintendo WiiU adapter.<br />
+  <br />
+  As   it states there:
+  <br />
+  <em>Any controller which does not have a hardware definition   will be usable only 
+  through user mapping or by mapping actions to numbered   axes and buttons in 
+  the Unknown Controller map. These unrecognized   controllers can only be  
+  supported if you provide your users a way to remap   their controls, such as 
+  by using the included Control Mapper or by creating   a custom control 
+  remapping screen. If you do not provide users with a way to   map their 
+  controls, only the above listed recognized controllers will be   usable. If 
+  you do provide your users a way to map their controls, virtually   any 
+  controller will be usable.</em><br />
+  <br />
+  The Nintendo   WiiU adapter does not have an official driver and cannot be 
+  used without   some form of hack or 3rd party driver.  
+  <a href="#nintendo-wiiu-adapter-driver">This device cannot even be detected without a HID driver.</a> If you look at the Dolphin 
+  Wiki, which   is where most people use this adapter, you'll see <a href="https://wiki.dolphin-emu.org/index.php?title=How_to_use_the_Official_GameCube_Controller_Adapter_for_Wii_U_in_Dolphin">several
+  methods to make it   work in Dolphin</a>.<br />
+  <br />
+  All   of these methods are hacks and none of them can provide any proper 
+  identifying HID information which could be used to make a controller 
+  definition for automatic recognition. There is no official or generally-used driver for this device that would identify it explicitly as a Nintendo WiiU Adapter, so it is not a candidate for 
+  automatic controller recognition.<br />
+  <br />
+  If   you've provided a way to remap and assign controls to your users, they 
+  should be able to use the device through user assignment and mapping as long 
+  as they've gone through all the steps to set up the driver to make it be <br />
+  recognized as a HID device.<br />
+</p>
+<p>&nbsp;</p>
+<hr />
+<h3><a name="set-mouse-cursor-position" id="set-mouse-cursor-position"></a>Can Rewired set the mouse cursor position?</h3>
+<p>No. Rewired does not allow you to set the OS mouse cursor position on any platform.</p>
+<p>You can use <a href="http://guavaman.com/projects/rewired/docs/PlayerControllers.html#player-mouse">Player Mouse</a> to move one or more sprite-based cursors with a joystick, keyboard, etc.</p>
+<p>&nbsp;</p>
+<hr />
 <h3><a name="source-code" id="default-dead-zone4"></a>Can I get the Rewired source code?</h3>
 <p>There is no  source code licensing option at this time. If having the source code is critical to your project, you should not purchase Rewired.</p>
 <p>&nbsp;</p>
@@ -410,7 +452,7 @@
         
     </div>
   <div class="footer clearfix">
-   	<p class="left">Copyright &copy;2014-2016 <a href="http://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
+   	<p class="left">Copyright &copy;2014-2018 <a href="http://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
   	<p class="right"><a href="http://guavaman.com/projects/rewired" title="Return to Rewired Website">Return to Rewired Website</a></p>
   </div>
   <!-- end .content --></div>

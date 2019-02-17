@@ -81,7 +81,8 @@
               <li><a href="Controllers.html">Controllers</a></li>
               <li><a href="ControllerMaps.html">Controller Maps</a></li>
               <li><a href="MapCategories.html">Map Categories</a></li>
-              <li><a href="ControllerMaps.html"></a><a href="Layouts.html">Layouts</a></li>
+              <li><a href="Layouts.html">Layouts</a></li>
+              <li><a href="ControllerTemplates.html">Controller Templates</a></li>
               <li><a href="CustomControllers.html">Custom Controllers</a></li>
             </ul>
             <strong>Extras:</strong>
@@ -94,6 +95,7 @@
             <strong>Misc:</strong>
             <ul>
 	          <li><a href="ComponentControls.html" title="Component Controls">Component Controls</a></li>
+	          <li><a href="PlayerControllers.html" title="Player Controllers">Player Controllers</a></li>
 	          <li><a href="InputMapper.html" title="Input Mapper">Input Mapper</a></li>
 	          <li><a href="UserDataStore.html" title="User Data Store">User Data Store</a></li>
             </ul>
@@ -224,14 +226,35 @@ bool OnIsElementAllowed(ControllerPollingInfo info) {
     // Allow all other controller elements</span>
     return true;
 }</pre>
-    <div class="bottom-pager clearfix">
-      <a class="back-button" href="Documentation.html" title="Actions"><span class="button-img"></span>Documentation</a></div>
+<p>Using multiple Input Mappers to listen to multiple input devices at the same time:</p>
+<p><a href="Examples.html#simple-combined-keyboard-mouse-remapping">See Simple Combined Keyboard Mouse Remapping example</a> for a working example.</p>
+<pre class="code">// Begin listening for input on both keyboard and mouse at the same time
+
+inputMapper_keyboard.Start(
+        new InputMapper.Context() {
+        actionId = actionId,
+        controllerMap = keyboardMap,
+        actionRange = actionRange,
+        actionElementMapToReplace = keyboardMap.GetElementMap(actionElementMapToReplaceId)
+    }
+);
+            
+inputMapper_mouse.Start(
+    new InputMapper.Context() {
+        actionId = actionId,
+        controllerMap = mouseMap,
+        actionRange = actionRange,
+        actionElementMapToReplace = mouseMap.GetElementMap(actionElementMapToReplaceId)
+    }
+);    </pre>
+<div class="bottom-pager clearfix">
+  <a class="back-button" href="Documentation.html" title="Actions"><span class="button-img"></span>Documentation</a></div>
 <!-- InstanceEndEditable -->
         </div>
         
     </div>
   <div class="footer clearfix">
-   	<p class="left">Copyright &copy;2014-2016 <a href="http://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
+   	<p class="left">Copyright &copy;2014-2018 <a href="http://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
   	<p class="right"><a href="http://guavaman.com/projects/rewired" title="Return to Rewired Website">Return to Rewired Website</a></p>
   </div>
   <!-- end .content --></div>

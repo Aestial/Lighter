@@ -81,7 +81,8 @@
               <li><a href="Controllers.html">Controllers</a></li>
               <li><a href="ControllerMaps.html">Controller Maps</a></li>
               <li><a href="MapCategories.html">Map Categories</a></li>
-              <li><a href="ControllerMaps.html"></a><a href="Layouts.html">Layouts</a></li>
+              <li><a href="Layouts.html">Layouts</a></li>
+              <li><a href="ControllerTemplates.html">Controller Templates</a></li>
               <li><a href="CustomControllers.html">Custom Controllers</a></li>
             </ul>
             <strong>Extras:</strong>
@@ -94,6 +95,7 @@
             <strong>Misc:</strong>
             <ul>
 	          <li><a href="ComponentControls.html" title="Component Controls">Component Controls</a></li>
+	          <li><a href="PlayerControllers.html" title="Player Controllers">Player Controllers</a></li>
 	          <li><a href="InputMapper.html" title="Input Mapper">Input Mapper</a></li>
 	          <li><a href="UserDataStore.html" title="User Data Store">User Data Store</a></li>
             </ul>
@@ -146,6 +148,7 @@
       <li><a href="#windows-uwp">Windows 10 Universal</a></li>
       <li><a href="#ouya">OUYA</a></li>
       <li><a href="#xbox-one">XBox One</a></li>
+      <li><a href="#ps4">Playstation 4</a></li>
       <li><a href="#nintendo-switch">Nintendo Switch</a></li>
     </ul>
     <p>&nbsp;</p>
@@ -190,6 +193,7 @@
 <hr />
 <h3><a name="windows-uwp" id="windows-app-store2"></a>Windows 10 Universal</h3>
 <p>Windows 10 Universal support requires Unity 5.2+</p>
+<p><strong>CRITICAL WARNING:</strong> There is a known issue with Unity on both .NET and IL2CPP builds in Unity 2018.2.0 - 2018.2.18 that causes the application to crash when a gamepad is disconnected. It is recommended you update to a version of Unity of 2018.2.19 or greater. <a href="KnownIssues.html#uwp-il2cpp-controller-disconnect-crash">See this form more information</a>.</p>
 <p><strong>Installation:</strong></p>
 <p>To build for the Windows 10 Universal, you must install Windows 10 Universal support. In order to build for this platform, you must be using the Windows Unity editor.</p>
 <p>Install Windows 10 Universal platform support through the menu:<br />
@@ -240,7 +244,7 @@
 <p>To enable Ouya Everywhere SDK  on the Razer Forge TV, follow the above steps and additionally check the &quot;Use Ouya SDK on Razer Forge TV&quot; option in the Rewired Global Options window.</p>
 <p>&nbsp;</p>
 <hr />
-<h3><a name="xbox-one" id="ouya2"></a>XBox One</h3>
+<h3><a name="xbox-one" id="xbox-one"></a>XBox One</h3>
 <p>Rewired includes special support for XBox One for better controller support and more accurate hot-plugging behavior. Rewired supports gamepad vibration on XBox One, however you must first install the prerequisite Xbox One native library provided by Unity.</p>
 <p>If you receive an error when switching to the Xbox One build target in Unity, make sure the <a href="Troubleshooting.html#compile-errors-ps4-xbone">Xbox One platform is checked on the Rewired_Core.dll import options</a>.</p>
 <p><strong>Dependencies</strong></p>
@@ -256,7 +260,17 @@ Unity Xbox Forums &gt; Unity for Xbox One Downloads (Sticky Topic) &gt; Under th
 <p>This is <em>always</em> due to improper set up of the dependency noted above. If Gamepad.dll is not found, not in the proper location, or does not have the proper inspector settings to enable it to be included with the XBox One build, all p/invoke calls to Gamepad.dll will fail, which crashes the XBox One rather than throwing an exception which can be caught and handled as happens on all other platforms. If the version of Gamepad.dll you are using does not have the exact method signature  Rewired expects, it will also crash. If you upgrade Unity versions but do not update the Gamepad.dll also, it may also crash if the gamepad.dll has been built to a different version of the Xbox One SDK.</p>
 <p>If for any reason you cannot get the Gamepad.dll, you can disable all calls to the DLL by setting &quot;Xbox One: Disable Vibration&quot; in the Rewired Global Options window which can be found at:  Window -&gt; Rewired -&gt; Global Options. This will disable support for gamepad vibration.</p>
 <p><strong>Accessing XBox One Controller Features</strong></p>
-<p>Special controller features of the XBox One gamepad such as vibration can be accessed via the <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_Platforms_XboxOne_XboxOneGamepadExtension.htm">XboxOneGamepadExtension</a> class available in the Joystick class <a href="HowTo's.html#xbox-one-controller-special-features">as seen in this example</a>.</p>
+<p>Special controller features of the XBox One gamepad such as vibration can be accessed via the <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_Platforms_XboxOne_XboxOneGamepadExtension.htm">XboxOneGamepadExtension</a> class available in the Joystick class <a href="HowTos.html#xbox-one-controller-special-features">as seen in this example</a>.</p>
+<p><strong>Troubleshooting</strong></p>
+<p>See <a href="Troubleshooting.html#xbox-one">Troubleshooting - Xbox One</a> for solutions to issues on the Xbox One platform.</p>
+<p>&nbsp;</p>
+<hr />
+<h3><a name="ps4" id="ps4"></a>Playstation 4</h3>
+<p>Rewired includes special support for Playstation 4 for better controller support.</p>
+<p><strong>Accessing PS4 Controller Features</strong></p>
+<p>Special controller features of the PS4 gamepad can be accessed via the <a href="http://guavaman.com/projects/rewired/docs/api-reference/html/T_Rewired_Platforms_PS4_PS4GamepadExtension.htm">PS4GamepadExtension</a> class available in the Joystick class <a href="HowTos.html#ps4-gamepad-special-features">as seen in this example</a>.</p>
+<p>Troubleshooting</p>
+<p>See <a href="Troubleshooting.html#ps4">Troubleshooting - Playstation 4</a> for solutions to issues on the PS4 platform.</p>
 <p>&nbsp;</p>
 <hr />
 <h3><a name="nintendo-switch" id="nintendo-switch"></a>Nintendo Switch</h3>
@@ -271,7 +285,7 @@ Unity Xbox Forums &gt; Unity for Xbox One Downloads (Sticky Topic) &gt; Under th
         
     </div>
   <div class="footer clearfix">
-   	<p class="left">Copyright &copy;2014-2016 <a href="http://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
+   	<p class="left">Copyright &copy;2014-2018 <a href="http://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
   	<p class="right"><a href="http://guavaman.com/projects/rewired" title="Return to Rewired Website">Return to Rewired Website</a></p>
   </div>
   <!-- end .content --></div>

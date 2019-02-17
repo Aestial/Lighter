@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerOutputController : MonoBehaviour 
 {
     [SerializeField] float startSpeedThreshold;
+    [SerializeField] float speedMultiplier = 1.0f;
     [SerializeField] Animator animator;
     [SerializeField] SpriteRenderer spriteRenderer;
 
@@ -33,7 +34,7 @@ public class PlayerOutputController : MonoBehaviour
 	void Update ()
     {
         currentHP = playerControler.currentHP;
-        speed = playerControler.speed;
+        speed = playerControler.speed * speedMultiplier;
         direction = playerControler.direction;
 
         float flareScale = Mathf.Lerp(minFlare, maxFlare, currentHP);
@@ -41,19 +42,27 @@ public class PlayerOutputController : MonoBehaviour
 
         if (speed > startSpeedThreshold)
         {
+            animator.SetBool("IsIdle", false);
             animator.SetFloat("Speed", speed);
+            
+            isHorizontal = Mathf.Abs(direction.x) > Mathf.Abs(direction.y);
+            isUp = !isHorizontal && Mathf.Sign(direction.y) > 0.0f;
+            isDown = !isHorizontal && Mathf.Sign(direction.y) < 0.0f;
+            isLeft = isHorizontal && Mathf.Sign(direction.x) < 0.0f;
+
+            animator.SetBool("IsHorizontal", isHorizontal);
+            animator.SetBool("IsUp", isUp);
+            animator.SetBool("IsDown", isDown);
+
+            this.spriteRenderer.flipX = isLeft;
         }
-
-        isHorizontal = Mathf.Abs(direction.x) > Mathf.Abs(direction.y);
-        isUp = !isHorizontal && Mathf.Sign(direction.y) > 0.0f;
-        isDown = !isHorizontal && Mathf.Sign(direction.y) < 0.0f;
-        isLeft = isHorizontal && Mathf.Sign(direction.x) < 0.0f;
-
-        animator.SetBool("IsHorizontal", isHorizontal);
-        animator.SetBool("IsUp", isUp);
-        animator.SetBool("IsDown", isDown);
-
-        this.spriteRenderer.flipX = isLeft;
-
+        else 
+        {
+            animator.SetBool("IsIdle", true);
+            animator.SetBool("IsUp", false);
+            animator.SetBool("IsDown", false);
+            animator.SetBool("IsHorizontal", false);
+        }
+        
 	}
 }
