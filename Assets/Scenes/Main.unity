@@ -268,33 +268,21 @@ MonoBehaviour:
   _onInteractionStateTransition:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+InteractionStateTransitionEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onVisibilityChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+VisibilityChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToNormal:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToHighlighted:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToPressed:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToDisabled:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _targetCustomControllerElement:
     _splitValue: 0
     _target:
@@ -382,23 +370,15 @@ MonoBehaviour:
   _onAxisValueChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+AxisValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonValueChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonDown:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonUp:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonUpEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1001 &29757175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5098,7 +5078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &66224929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5769,8 +5749,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 7aabf0cbbd38b6143a05115105c53cf3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6421,8 +6399,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 16
@@ -6779,8 +6755,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8e0cb7e7dc5f5a54ab9e388c6b9b5999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7361,8 +7335,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8e0cb7e7dc5f5a54ab9e388c6b9b5999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -8999,13 +8971,9 @@ MonoBehaviour:
   _onInteractionStateTransition:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+InteractionStateTransitionEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onVisibilityChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+VisibilityChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToNormal:
     m_PersistentCalls:
       m_Calls:
@@ -9020,8 +8988,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToHighlighted:
     m_PersistentCalls:
       m_Calls:
@@ -9036,8 +9002,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToPressed:
     m_PersistentCalls:
       m_Calls:
@@ -9052,8 +9016,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToDisabled:
     m_PersistentCalls:
       m_Calls:
@@ -9068,8 +9030,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _horizontalAxisCustomControllerElement:
     _splitValue: 0
     _target:
@@ -9248,28 +9208,18 @@ MonoBehaviour:
   _onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchJoystick+ValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onStickPositionChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchJoystick+ValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onTouchStarted:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchJoystick+TouchStartedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onTouchEnded:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchJoystick+TouchEndedEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onTap:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchJoystick+TapEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &915232267
 GameObject:
   m_ObjectHideFlags: 0
@@ -9930,33 +9880,21 @@ MonoBehaviour:
   _onInteractionStateTransition:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+InteractionStateTransitionEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onVisibilityChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+VisibilityChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToNormal:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToHighlighted:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToPressed:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToDisabled:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _targetCustomControllerElement:
     _splitValue: 0
     _target:
@@ -10044,23 +9982,15 @@ MonoBehaviour:
   _onAxisValueChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+AxisValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonValueChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonDown:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonUp:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonUpEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1058754299
 GameObject:
   m_ObjectHideFlags: 0
@@ -10218,8 +10148,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8e0cb7e7dc5f5a54ab9e388c6b9b5999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -15665,8 +15593,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: b8d1d095a37b3f944bc7f2898821a393, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -15760,8 +15686,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8e0cb7e7dc5f5a54ab9e388c6b9b5999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -15930,33 +15854,21 @@ MonoBehaviour:
   _onInteractionStateTransition:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+InteractionStateTransitionEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onVisibilityChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+VisibilityChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToNormal:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToHighlighted:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToPressed:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToDisabled:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _hideAtRuntime: 1
 --- !u!114 &1297367237
 MonoBehaviour:
@@ -15976,8 +15888,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: acd8278e920cf5e46bbef8a57bd04ae5, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
@@ -16188,8 +16098,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8e0cb7e7dc5f5a54ab9e388c6b9b5999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -16298,7 +16206,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365335773}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b648795acc7f74e9881abac9d84c21ff, type: 3}
   m_Name: 
@@ -16821,33 +16729,21 @@ MonoBehaviour:
   _onInteractionStateTransition:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+InteractionStateTransitionEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onVisibilityChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+VisibilityChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToNormal:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToHighlighted:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToPressed:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _onInteractionStateChangedToDisabled:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _horizontalAxisCustomControllerElement:
     _splitValue: 0
     _target:
@@ -17026,23 +16922,15 @@ MonoBehaviour:
   _onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchPad+ValueChangedEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onTap:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchPad+TapEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onPressDown:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchPad+PressDownEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onPressUp:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchPad+PressUpEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &1473670506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17061,8 +16949,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: acd8278e920cf5e46bbef8a57bd04ae5, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
@@ -17135,8 +17021,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 60ea8620e7f042946a2fc4ae4dbb1c82, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -17243,8 +17127,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: b1af90ce03a007349aa9428d646a0939, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -17528,8 +17410,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8e0cb7e7dc5f5a54ab9e388c6b9b5999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -22679,8 +22559,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8e0cb7e7dc5f5a54ab9e388c6b9b5999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -23810,8 +23688,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: b8d1d095a37b3f944bc7f2898821a393, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -24221,8 +24097,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8e0cb7e7dc5f5a54ab9e388c6b9b5999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -24586,8 +24460,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: b1af90ce03a007349aa9428d646a0939, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
