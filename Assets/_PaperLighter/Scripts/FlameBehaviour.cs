@@ -54,7 +54,7 @@ public class FlameBehaviour : MonoBehaviour {
 
     IEnumerator Turnlight()
     {
-        while (actualHP > 0)
+        while (actualHP > 0.0f)
         {
             actualHP = actualHP - (drainSpeed * drainMultiplier);
             //Debug.Log("flame: " + actualHP);
