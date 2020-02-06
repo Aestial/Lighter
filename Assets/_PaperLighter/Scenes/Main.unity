@@ -436,18 +436,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81bd9f12716504dc1a817c5307b32706, type: 3}
---- !u!114 &29757176 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114128067272212076, guid: 81bd9f12716504dc1a817c5307b32706,
-    type: 3}
-  m_PrefabInstance: {fileID: 29757175}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 581b3e3c96df0ef42aef16b63b27b87f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &54730170
 GameObject:
   m_ObjectHideFlags: 0
@@ -6906,7 +6894,7 @@ MonoBehaviour:
   m_Script: {fileID: -6045369, guid: 09c9b883b79ef864a99683bb36c5776d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rewiredInputManager: {fileID: 29757176}
+  _rewiredInputManager: {fileID: 0}
   _customControllerSelector:
     _findUsingSourceId: 1
     _sourceId: 0
@@ -9118,6 +9106,7 @@ MonoBehaviour:
   _axis2D:
     _calibration:
       _deadZoneType: 1
+      _sensitivityType: 0
     _xAxis:
       _buttonActivationThreshold: 0.5
       _calibration:
@@ -16359,7 +16348,7 @@ MonoBehaviour:
   m_Script: {fileID: -1333545014, guid: 09c9b883b79ef864a99683bb36c5776d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rewiredInputManager: {fileID: 29757176}
+  _rewiredInputManager: {fileID: 0}
   _customControllerSelector:
     _findUsingSourceId: 1
     _sourceId: 0
@@ -16582,6 +16571,7 @@ MonoBehaviour:
   _axis2D:
     _calibration:
       _deadZoneType: 1
+      _sensitivityType: 0
     _xAxis:
       _buttonActivationThreshold: 0.5
       _calibration:
@@ -16847,6 +16837,7 @@ MonoBehaviour:
   _axis2D:
     _calibration:
       _deadZoneType: 1
+      _sensitivityType: 0
     _xAxis:
       _buttonActivationThreshold: 0.5
       _calibration:

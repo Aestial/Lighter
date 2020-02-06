@@ -58,7 +58,6 @@ MonoBehaviour:
   currentHP: 1
   speed: 0
   direction: {x: 0, y: 0}
-  drainSpeed: 0.01
 --- !u!114 &114918658224647734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21b63245bc0db4116931cc0efec01b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMultiplier: 7
+  speedMultiplier: 8
 --- !u!114 &114638872672221740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 1
-  fireSound: {fileID: 8300000, guid: 0e8c5b6d934c94143ad891614c1048c9, type: 3}
+  fireSound: {fileID: 0}
   fuente: {fileID: 0}
 --- !u!54 &54871232206172998
 Rigidbody:
