@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 public class FollowTarget : MonoBehaviour 
 {
@@ -16,13 +13,6 @@ public class FollowTarget : MonoBehaviour
 
     public bool isMoving = false;
 
-	// Use this for initialization
-	void Start () 
-    {
-		
-	}
-	
-	// Update is called once per frame
 	void Update ()
     {
         float distance = Vector3.Distance(this.transform.position, target.position);

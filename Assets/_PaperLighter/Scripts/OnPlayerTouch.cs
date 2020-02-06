@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnTouch : MonoBehaviour {
+public class OnPlayerTouch : MonoBehaviour {
 
     [SerializeField] float maxHP = 1.0f;
     //public float actualHP;
     //public float fixedtime;
-    PlayerControler playerControler;
+    PlayerController playerController;
     [SerializeField] AudioClip fireSound;
 
     public GameObject fuente;
@@ -16,14 +16,14 @@ public class OnTouch : MonoBehaviour {
         //fixedtime = 1f;
         //this.actualHP = maxHP;
         //StartCoroutine(Lowerlight());
-        this.playerControler = GetComponent<PlayerControler>();
+        this.playerController = GetComponent<PlayerController>();
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Source")
         {
-            this.playerControler.currentHP = maxHP;
+            this.playerController.currentHP = maxHP;
             AudioManager.Instance.PlayOneShoot2D(fireSound);
             //this.actualHP = maxHP;
             Debug.Log("Charging!");

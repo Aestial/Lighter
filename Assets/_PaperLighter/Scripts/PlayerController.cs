@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControler : MonoBehaviour 
+public class PlayerController : MonoBehaviour 
 {
     public bool canInteract;
     [SerializeField] private string interactionTag;
@@ -10,9 +10,9 @@ public class PlayerControler : MonoBehaviour
     public float currentHP = 1.0f;
     public float speed;
     public Vector2 direction;
-    [SerializeField] float drainSpeed = 0.5f;
+    //[SerializeField] float drainSpeed = 0.5f;
 
-    private Rigidbody rigidbody;
+    private new Rigidbody rigidbody;
 
     // Use this for initialization
     void Start()

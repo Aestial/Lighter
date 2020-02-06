@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlameBehave : MonoBehaviour {
+public class FlameBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 
@@ -31,7 +31,7 @@ public class FlameBehave : MonoBehaviour {
     {
         if (!debounce && actualHP > 0.0f && other.gameObject.name == "Player")
         {
-            float playerHP = other.GetComponent<PlayerControler>().currentHP;
+            float playerHP = other.GetComponent<PlayerController>().currentHP;
             if (playerHP >= cost)
             {
                 debounce = true;
@@ -40,7 +40,7 @@ public class FlameBehave : MonoBehaviour {
                 StartCoroutine(Turnlight());
                 StartCoroutine(DebounceCoroutine());
                 Debug.Log("Touching flame");
-                other.GetComponent<PlayerControler>().currentHP -= cost;
+                other.GetComponent<PlayerController>().currentHP -= cost;
                 AudioManager.Instance.PlayOneShoot2D(fireSound);
             }
         }

@@ -15,12 +15,6 @@ public class Return : MonoBehaviour
             // Do Shit
             SceneManager.LoadScene("Title");
 
-        }
-        //if (Input.GetButton("Fire"))
-        //{
-        //    SceneManager.LoadScene("Title");
-        //}
-
+        }       
     }
-
 }

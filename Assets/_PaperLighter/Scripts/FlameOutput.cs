@@ -9,18 +9,18 @@ public class FlameOutput : MonoBehaviour
     [SerializeField] float minFlare;
     [SerializeField] AudioClip destroySound;
 
-    FlameBehave flameBehave;
+    FlameBehaviour flame;
     public float currentHP;
 	
 	void Start () 
     {
         //this.material = this.meshRenderer.material;
-        this.flameBehave = GetComponent<FlameBehave>();
+        this.flame = GetComponent<FlameBehaviour>();
 	}
 	
 	void Update () 
     {
-        this.currentHP = this.flameBehave.actualHP;
+        this.currentHP = this.flame.actualHP;
         if (this.currentHP <= 0.001f)
         {
             AudioManager.Instance.PlayOneShoot2D(destroySound);

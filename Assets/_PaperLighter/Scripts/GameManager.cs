@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameManaqer : MonoBehaviour 
+public class GameManager : MonoBehaviour 
 {
     [SerializeField] float totalTime;
     public float currentTime;
     [SerializeField] Text timeText;
     [SerializeField] Light ambientLight;
 
-    public FlameBehave[] lights;
+    public FlameBehaviour[] lights;
 
     private int counter;
 
@@ -19,7 +19,7 @@ public class GameManaqer : MonoBehaviour
 	void Start () 
     {
         this.currentTime = this.totalTime;
-        this.lights = FindObjectsOfType<FlameBehave>();
+        this.lights = FindObjectsOfType<FlameBehaviour>();
         Debug.Log("Number of lights: " + this.lights.Length);
 	}
 	

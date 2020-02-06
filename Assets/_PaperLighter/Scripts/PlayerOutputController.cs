@@ -13,7 +13,7 @@ public class PlayerOutputController : MonoBehaviour
     [SerializeField] float maxFlare;
     [SerializeField] float minFlare;
 
-    PlayerControler playerControler;
+    PlayerController playerController;
 
     private float speed;
     private Vector2 direction;
@@ -27,15 +27,15 @@ public class PlayerOutputController : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-        playerControler = GetComponent<PlayerControler>();	
+        playerController = GetComponent<PlayerController>();	
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        currentHP = playerControler.currentHP;
-        speed = playerControler.speed * speedMultiplier;
-        direction = playerControler.direction;
+        currentHP = playerController.currentHP;
+        speed = playerController.speed * speedMultiplier;
+        direction = playerController.direction;
 
         float flareScale = Mathf.Lerp(minFlare, maxFlare, currentHP);
         flare.localScale = new Vector3(flareScale, flareScale, flareScale);

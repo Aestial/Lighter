@@ -16,20 +16,5 @@ public class GameStart : MonoBehaviour
             SceneManager.LoadScene("Main");
 
         }
-        //if (Input.GetButton("Fire"))
-        //{
-        //    SceneManager.LoadScene("Title");
-        //}
-
     }
-
-    //private void Update()
-    //{
-    //    if (Input.GetButton("Fire"))
-    //    {
-    //        SceneManager.LoadScene("Main");
-    //    }
-
-    //}
-
 }
