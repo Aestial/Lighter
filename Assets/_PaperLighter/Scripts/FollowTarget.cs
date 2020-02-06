@@ -11,15 +11,17 @@ public class FollowTarget : MonoBehaviour
 
     [SerializeField] float speed = 2.0f;
 
-    public bool isMoving = false;
+    public bool isMoving;
 
 	void Update ()
     {
-        float distance = Vector3.Distance(this.transform.position, target.position);
+        Vector3 noOffsetPos = this.transform.position - offset;
+
+        float distance = Vector3.Distance(noOffsetPos, target.position);
 
         if (!this.isMoving 
             && (target.GetComponent<Rigidbody>().velocity.magnitude >= this.startSpeed)
-            && (distance >= (this.startDistanceThreshold + this.offset.magnitude)))
+            && (distance >= this.startDistanceThreshold))
         {
             this.isMoving = true;    
         }
@@ -40,7 +42,7 @@ public class FollowTarget : MonoBehaviour
 
         if (this.isMoving 
             && (target.GetComponent<Rigidbody>().velocity.magnitude <= this.stopSpeed)
-            && (distance <= (this.stopDistanceThreshold + this.offset.magnitude)))
+            && (distance <= this.stopDistanceThreshold))
         {
             this.isMoving = false;
         }

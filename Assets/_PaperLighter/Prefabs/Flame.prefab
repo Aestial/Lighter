@@ -175,8 +175,8 @@ MonoBehaviour:
   cost: 0.25
   drainSpeed: 0.001
   debounceTime: 1
-  fireSound: {fileID: 0}
-  drainMultiplier: 1
+  fireSound: {fileID: 8300000, guid: 0e8c5b6d934c94143ad891614c1048c9, type: 3}
+  drainMultiplier: 2
   actualHP: 0
   fixedtime: 0
 --- !u!114 &114166625388901568
@@ -208,7 +208,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.2, y: 3, z: 1.0000002}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1 &1780466724726218
 GameObject:
   m_ObjectHideFlags: 0
@@ -4829,7 +4829,7 @@ GameObject:
   - component: {fileID: 198133288290783676}
   - component: {fileID: 199593609240622220}
   m_Layer: 0
-  m_Name: Fire (1)
+  m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4844,7 +4844,7 @@ Transform:
   m_GameObject: {fileID: 1828092000267810}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.28, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4012128620399422}
   - {fileID: 4300383906340906}
@@ -14218,13 +14218,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901599008032846}
-  m_LocalRotation: {x: -0, y: -0.95813674, z: -0, w: 0.28631106}
-  m_LocalPosition: {x: 0, y: 0.12, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.061599, y: 2.0615966, z: 2.061599}
   m_Children: []
   m_Father: {fileID: 4005711176224394}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -56.726, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33418270817822800
 MeshFilter:
   m_ObjectHideFlags: 0
