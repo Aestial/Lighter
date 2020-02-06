@@ -1,50 +1,49 @@
 ﻿using UnityEngine;
 
 public class FollowTarget : MonoBehaviour 
-{
-	[SerializeField] Transform target;
+{    
+    [SerializeField] Transform target;
     [SerializeField] float startDistanceThreshold;
     [SerializeField] float stopDistanceThreshold;
     [SerializeField] float startSpeed;
     [SerializeField] float stopSpeed;
-    [SerializeField] Vector3 offset;
-
     [SerializeField] float speed = 2.0f;
+    Vector3 offset;
+    bool isMoving;
 
-    public bool isMoving;
-
-	void Update ()
+    void Start()
     {
-        Vector3 noOffsetPos = this.transform.position - offset;
-
+        offset = transform.position;
+    }
+    void Update ()
+    {
+        Vector3 noOffsetPos = transform.position - offset;
         float distance = Vector3.Distance(noOffsetPos, target.position);
 
-        if (!this.isMoving 
-            && (target.GetComponent<Rigidbody>().velocity.magnitude >= this.startSpeed)
-            && (distance >= this.startDistanceThreshold))
+        if (!isMoving 
+            && (target.GetComponent<Rigidbody>().velocity.magnitude >= startSpeed)
+            && (distance >= startDistanceThreshold))
         {
-            this.isMoving = true;    
+            isMoving = true;    
         }
-
-        if (this.isMoving)
+        if (isMoving)
         {
             float interpolation = speed * Time.deltaTime;
 
             Vector3 finalPosition = target.position + offset;
 
-            Vector3 position = this.transform.position;
-            position.x = Mathf.Lerp(this.transform.position.x, finalPosition.x, interpolation);
-            position.y = Mathf.Lerp(this.transform.position.y, finalPosition.y, interpolation);
-            position.z = Mathf.Lerp(this.transform.position.z, finalPosition.z, interpolation);
+            Vector3 position = transform.position;
+            position.x = Mathf.Lerp(transform.position.x, finalPosition.x, interpolation);
+            position.y = Mathf.Lerp(transform.position.y, finalPosition.y, interpolation);
+            position.z = Mathf.Lerp(transform.position.z, finalPosition.z, interpolation);
 
-            this.transform.position = position;    
+            transform.position = position;    
         }
-
-        if (this.isMoving 
-            && (target.GetComponent<Rigidbody>().velocity.magnitude <= this.stopSpeed)
-            && (distance <= this.stopDistanceThreshold))
+        if (isMoving 
+            && (target.GetComponent<Rigidbody>().velocity.magnitude <= stopSpeed)
+            && (distance <= stopDistanceThreshold))
         {
-            this.isMoving = false;
+            isMoving = false;
         }
 	}
 }
