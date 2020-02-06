@@ -64,8 +64,8 @@
             <!-- InstanceBeginEditable name="PageHeader" -->Rewired Documentation<!-- InstanceEndEditable -->
             </h1>
             
-		  <!-- InstanceBeginEditable name="MainBody" -->
-    <h2 >For Rewired version 1.1.10.0+</h2>
+			<!-- InstanceBeginEditable name="MainBody" -->
+    <h2 >For Rewired version 1.1.23.0</h2>
        
     <ul>
       <li><a href="Overview.html">Overview</a></li>
@@ -94,6 +94,7 @@
   <li><a href="ControllerMaps.html">Controller Maps</a></li>
   <li><a href="MapCategories.html">Map Categories</a></li>
   <li><a href="ControllerMaps.html"></a><a href="Layouts.html">Layouts</a></li>
+  <li><a href="ControllerTemplates.html">Controller Templates</a></li>
   <li><a href="CustomControllers.html">Custom Controllers</a></li>
 </ul>
     <p>&nbsp;</p>
@@ -108,6 +109,7 @@
 <h3 style="background-color:#ddd">Misc:</h3>
     <ul>
       <li><a href="ComponentControls.html">Component Controls</a></li>
+      <li><a href="PlayerControllers.html">Player Controllers</a></li>
       <li><a href="InputMapper.html">Input Mapper</a></li>
       <li><a href="UserDataStore.html">User Data Store</a></li>
       </ul>
@@ -124,10 +126,12 @@
   <li><a href="HowTos.html#managing-controller-maps-runtime">Managing Controller Maps at runtime</a></li>
   <li><a href="HowTos.html#loading-controller-maps-runtime">Loading Controller Maps at runtime</a></li>
   <li><a href="HowTos.html#get-element-name-for-action">Displaying a button/axis/key name to the user for an Action</a></li>
-  <li><a href="HowTos.html#display-glyph-for-action">Displaying a glyph for a Joystick element mapped to an Action</a></li>
-  <li><a href="HowTos.html#display-glyph-for-active-elements">Displaying a glyph for the currently active Joystick elements</a></li>
+  <li><a href="HowTos.html#display-glyph-for-action">Displaying a glyph for a Controller element mapped to an Action</a></li>
+  <li><a href="HowTos.html#display-glyph-for-active-elements">Displaying a glyph for the currently active </a><a href="HowTos.html#display-glyph-for-action">Controller</a><a href="HowTos.html#display-glyph-for-active-elements"> elements</a></li>
   <li><a href="HowTos.html#get-contributing-input-sources">Getting contributing input sources for an Action</a></li>
   <li><a href="HowTos.html#last-used-controller">Determining which Controller was last used</a></li>
+  <li><a href="HowTos.html#is-controller-gamepad">Determining if a Controller is a Gamepad</a></li>
+  <li><a href="HowTos.html#relative-absolute-axes">Handling Mouse and Joystick axes</a></li>
   <li><a href="HowTos.html#calibrating-controller-axes">Calibrating Joystick axes</a></li>
   <li><a href="HowTos.html#Vibration-Rumble">Vibration/Rumble</a></li>
   <li><a href="HowTos.html#button-press-types">Handling buttons presses of various types</a></li>
@@ -159,6 +163,7 @@
   <li><a href="HowTos.html#raildriver-special-features">Using P.I. Engineering Rail Driver special features</a></li>
   <li><a href="HowTos.html#xbox-one-controller-special-features">Using XBox One controller special features on XBox One platform</a></li>
   <li><a href="HowTos.html#ps4-gamepad-special-features">Using PS4 gamepad special features on PS4 platform</a></li>
+  <li><a href="HowTos.html#asmdef-files">Using asmdef files with Rewired</a></li>
 </ul>
 <p>&nbsp;</p>
 <h3 style="background-color:#ddd">Help:</h3>
@@ -173,6 +178,7 @@
       <li><a href="SpecialPlatformSupport.html#windows-uwp">Windows 10 Universal</a></li>
       <li><a href="SpecialPlatformSupport.html#ouya">OUYA</a></li>
       <li><a href="SpecialPlatformSupport.html#xbox-one">XBox One</a></li>
+      <li><a href="SpecialPlatformSupport.html#ps4">Playstation 4</a></li>
       <li><a href="SpecialPlatformSupport.html#nintendo-switch">Nintendo Switch</a></li>
       </ul>
   </li>
@@ -181,10 +187,13 @@
     <ul>
       <li><a href="Integration.html#BehaviorDesigner">Behavior Designer</a></li>
       <li><a href="Integration.html#Bolt">Bolt</a></li>
+      <li><a href="Integration.html#Cinemachine">Cinemachine</a></li>
       <li><a href="Integration.html#CorgiEngine">Corgi Engine - 2D + 2.5D Platformer</a></li>
       <li><a href="Integration.html#Deftly">Deftly: Top Down Shooter Framework</a></li>
       <li><a href="Integration.html#DialogueSystem">Dialogue System for Unity</a></li>
+      <li><a href="Integration.html#FirstPersonController">First Person Controller</a></li>
       <li><a href="Integration.html#GAC">GAC (Great Animation Combos) System</a></li>
+      <li><a href="Integration.html#HorseAnimsetPro">Horse Animset Pro</a></li>
       <li><a href="Integration.html#InventoryPro">Inventory Pro</a></li>
       <li><a href="Integration.html#iRDS">iRDS - Intelligent Race Driver System</a></li>
       <li><a href="Integration.html#MotionController">Motion Controller</a></li>
@@ -197,14 +206,20 @@
       <li><a href="Integration.html#RealisticFPS">Realistic FPS Prefab</a></li>
       <li><a href="Integration.html#RealisticTankController">Realistic Tank Controller</a></li>
       <li><a href="Integration.html#RexEngine">Rex Engine: A 2D Platformer Engine</a></li>
-      <li><a href="Integration.html#ThirdPersonController">Third Person Controller</a></li>
-      <li><a href="Integration.html#UFPS">UFPS</a></li>
+      <li><a href="Integration.html#Rucksack">Rucksack - Multiplayer Inventory System</a></li>
+      <li><a href="Integration.html#SpaceCombatKit">Space Combat Kit</a></li>
+      <li><a href="Integration.html#UFPM">UFPM: Ultimate First Person Melee</a></li>
+      <li><a href="Integration.html#UFPS">UFPS 1.x</a></li>
+      <li><a href="Integration.html#UFPS2">UFPS: Ultimate First Person Shooter</a></li>
       <li><a href="Integration.html#UFS">uFS - Flight Simulation Engine</a></li>
-      <li><a href="Integration.html#UltimateSurvival">Ultimate Survival</a></li>
+      <li><a href="Integration.html#UltimateCharacterController">Ultimate Character Controller</a></li>
       
       <li><a href="Integration.html#unity-ui">Unity UI</a></li>
-      <li><a href="Integration.html#UniversalFightingEngine">Universal Fighting Engine</a></li>
+      <li><a href="Integration.html#UniversalFightingEngine">Universal Fighting Engine (UFE)</a></li>
+      <li><a href="Integration.html#UniversalFightingEngine2">Universal Fighting Engine 2 (UFE2)</a></li>
       <li><a href="Integration.html#uSimAirModule">uSim Air Module</a></li>
+      <li><a href="Integration.html#UTPM">UTPM: Ultimate Third Person Melee</a></li>
+      <li><a href="Integration.html#UTPS">UTPS: Ultimate Third Person Shooter</a></li>
       <li><a href="Integration.html#others">Others</a></li>
     </ul>
   </li>
@@ -230,6 +245,7 @@
       <li><a href="FAQ.html#default-dead-zone">My joystick's dead zone is too large/small. How do I change it?</a></li>
       <li><a href="FAQ.html#gesture-bindings">How can I bind an Action to a button short-press  and another Action to a long-press?</a></li>
       <li><a href="FAQ.html#nintendo-wiiu-adapter-driver">Can the Nintendo WiiU 4-player adapter be used without requiring users to install a driver?</a></li>
+      <li><a href="FAQ.html#set-mouse-cursor-position">Can Rewired set the mouse cursor position?</a></li>
       <li><a href="FAQ.html#source-code">Can I get the Rewired source code?</a></li>
       <li><a href="FAQ.html#seat-license">What does &quot;this extension requires one licence per seat&quot; mean?</a></li>
       <li><a href="FAQ.html#discounts">Do you offer educational or bulk license discounts?</a></li>
@@ -252,7 +268,7 @@
         
     </div>
   <div class="footer clearfix">
-   	<p class="left">Copyright &copy;2014-2016 <a href="http://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
+   	<p class="left">Copyright &copy;2014-2018 <a href="http://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
   	<p class="right"><a href="http://guavaman.com/projects/rewired" title="Return to Rewired Website">Return to Rewired Website</a></p>
   </div>
   <!-- end .content --></div>

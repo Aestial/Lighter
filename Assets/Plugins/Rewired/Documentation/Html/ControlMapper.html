@@ -81,7 +81,8 @@
               <li><a href="Controllers.html">Controllers</a></li>
               <li><a href="ControllerMaps.html">Controller Maps</a></li>
               <li><a href="MapCategories.html">Map Categories</a></li>
-              <li><a href="ControllerMaps.html"></a><a href="Layouts.html">Layouts</a></li>
+              <li><a href="Layouts.html">Layouts</a></li>
+              <li><a href="ControllerTemplates.html">Controller Templates</a></li>
               <li><a href="CustomControllers.html">Custom Controllers</a></li>
             </ul>
             <strong>Extras:</strong>
@@ -94,6 +95,7 @@
             <strong>Misc:</strong>
             <ul>
 	          <li><a href="ComponentControls.html" title="Component Controls">Component Controls</a></li>
+	          <li><a href="PlayerControllers.html" title="Player Controllers">Player Controllers</a></li>
 	          <li><a href="InputMapper.html" title="Input Mapper">Input Mapper</a></li>
 	          <li><a href="UserDataStore.html" title="User Data Store">User Data Store</a></li>
             </ul>
@@ -202,7 +204,7 @@
       <li>GameObject -&gt; Create Other -&gt; Rewired -&gt; UI -&gt; Rewired Event System</li>
       <li>Window -&gt; Rewired -&gt; Create -&gt; UI -&gt; Rewired Event System</li>
       </ul>
-    <p><img src="files/images/controlmapper_rewiredstandaloneinputmodule.png" width="469" height="275" class="right" />Four Actions must be set up in the Rewired Input Manager and the RewiredStandaloneInputModule in order to control the UI. <strong>These four Actions must have names that match exactly in both the Rewired Input Manager and the RewiredStandaloneInputModule</strong>.</p>
+    <p><img src="files/images/rewiredstandaloneinputmodule_inspector_actions.png" class="right" />Four Actions must be set up in the Rewired Input Manager and the RewiredStandaloneInputModule in order to control the UI. <strong>These four Actions must have names that match exactly in both the Rewired Input Manager and the RewiredStandaloneInputModule</strong>.</p>
     <ol>
       <li>Horizontal Axis - The Action that will control Left/Right movement in the UI.</li>
       <li>Vertical Axis - The Action that will control Up/Down movement in the UI.</li>
@@ -210,6 +212,8 @@
       <li>Cancel - The Action that cancels.</li>
     </ol>
       <p>The actual names you use are up to you. Of course these Actions must also be assigned to one or more keyboard or joystick maps and assigned to a Player to be functional. </p>
+      <p>If you want to use <a href="RewiredStandaloneInputModule.html#virtual-mouse">mouse pointers</a> exclusively to interact with the UI, you can set all these Actions to blank strings.</p>
+      <p>Alternately, you can set Actions by id by enabling &quot;Set Actions By Id.&quot;</p>
 <p>NOTE: It is <strong>HIGHLY</strong> recommended that you create unique menu-only Actions for these UI controls in a separate controller map category from your game Actions. If you use your in-game actions such as &quot;Move Horizonal&quot; or &quot;Jump&quot; for these UI controls, you run the risk of allowing the user to render the UI unusable because they removed an assignment for one of these game Actions which was also  controlling the UI.</p>
 <p>The settings in the RewiredStandaloneInputModule will determine which Players can control the UI. If you check &quot;Use All Rewired Game Players&quot;, all Players besides the System Player that have a map configured with these UI Actions will be able to control the UI. If you check &quot;Use Rewired System Player&quot;, the same will be true for the System Player. If instead you only want specific Players to control the UI, you can set these Player Ids individually.</p>
 <p>If the UI control speed with a Joystick seems too slow or fast, adjust the &quot;Input Actions Per Second&quot; setting.</p>
@@ -301,8 +305,13 @@
     <p>&nbsp;</p>
     <hr />
     <h2><a name="misc-notes" id="misc-notes"></a>Misc Notes</h2>
+    <p><strong>Other UI Selectables outside or behind Control Mapper</strong></p>
+    <ul>
+      <li>UI auto navigation will find other  UI elements outside Control Mapper and try to navigate to them when a direction is pressed. If you have other UI elements behind Control Mapper, you must disable interactability on them. The easiest way to do that is with a Canvas Group setting CanvasGroup.interactable to false.</li>
+      <li>If you have multiple Canvases in your scene and you want auto navigation to work between elements on the different Canvases, all Canvases must have the same Render Mode.</li>
+    </ul>
     <p><strong>Opening and closing the screen</strong></p>
-    <p>The easiest way to control the screen is by assigning Actions in the <a href="#screen-control-actions">Screen Control Actions section of the inspector</a>.</p>
+<p>The easiest way to control the screen is by assigning Actions in the <a href="#screen-control-actions">Screen Control Actions section of the inspector</a>.</p>
     <p>Another way is by using a Unity UI button and assigning ControlMapper.Open() to the OnClick event.</p>
     <p>You can also control the screen through scripting:</p>
     <ul>
@@ -349,17 +358,17 @@ Even if your game doesn't use analog input, your players may still use physical 
     <h2><a name="inspector-options" id="inspector-options"></a>Inspector Options</h2>
     <p>Many configuration options are available through the inspector. Most options have tool-tip help.</p>
     <p>&nbsp;</p>
-    <p><strong>Rewired Input Manager</strong></p>
+    <p><strong><a name="inspector-rewired-input-manager" id="inspector-rewired-input-manager"></a>Rewired Input Manager</strong></p>
     <p><img src="files/images/controlmapper_inspector_rewired-input-manager.png" width="676" height="47" /></p>
     <p>You must link a Rewired Input Manager to this field in the inspector. All input data will be read from the Rewired Input Manager linked here.    </p>
     <p>&nbsp;</p>
     <hr />
-    <p><strong>Don't Destroy On Load</strong></p>
+    <p><strong><a name="inspector-dont-destroy-on-load" id="inspector-dont-destroy-on-load"></a>Don't Destroy On Load</strong></p>
     <p>Set to True to prevent the Game Object from being destroyed when a new scene is loaded.</p>
     <p>NOTE: Changing this value from True to False at runtime will have no effect because Object.DontDestroyOnLoad cannot be undone once set.</p>
     <p>&nbsp;</p>
     <hr />
-    <p><strong>Screen Options</strong></p>
+    <p><strong><a name="inspector-screen-options" id="inspector-screen-options"></a>Screen Options</strong></p>
 <p><img src="files/images/controlmapper_inspector_screen-options.png" width="676" height="65" /></p>
 <p>Various options for the control mapper screen.</p>
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -370,7 +379,7 @@ Even if your game doesn't use analog input, your players may still use physical 
 </table>
 <p>&nbsp;</p>
     <hr />
-    <p><strong>Player Options</strong></p>
+    <p><strong><a name="inspector-player-options" id="inspector-player-options"></a>Player Options</strong></p>
     <p><img src="files/images/controlmapper_inspector_player-options.png" alt="" width="676" height="90" /></p>
     <p>Various options for Players.</p>
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -385,7 +394,7 @@ Even if your game doesn't use analog input, your players may still use physical 
     </table>
     <p>&nbsp;</p>
     <hr />
-    <p><strong>Controller Options</strong></p>
+    <p><strong><a name="inspector-controller-options" id="inspector-controller-options"></a>Controller Options</strong></p>
     <p><img src="files/images/controlmapper_inspector_controller-options.png" alt="" width="676" height="164" /></p>
     <p>Various options for controllers.</p>
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -421,7 +430,7 @@ Even if your game doesn't use analog input, your players may still use physical 
     </table>
     <p>&nbsp;</p>
     <hr />
-    <p><strong>Keyboard Options</strong></p>
+    <p><strong><a name="inspector-keyboard-options" id="inspector-keyboard-options"></a>Keyboard Options</strong></p>
     <p><img src="files/images/controlmapper_inspector_keyboard-options.png" alt="" width="687" height="90" /><br />
     </p>
     <p>Various options for the Keyboard.</p>
@@ -437,7 +446,7 @@ Even if your game doesn't use analog input, your players may still use physical 
     </table>
     <p>&nbsp;</p>
     <hr />
-    <p><strong>Mouse Options</strong></p>
+    <p><strong><a name="inspector-mouse-options" id="inspector-mouse-options"></a>Mouse Options</strong></p>
     <p><img src="files/images/controlmapper_inspector_mouse-options.png" alt="" width="687" height="127" /></p>
     <p>Various options for the Mouse.</p>
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -531,7 +540,7 @@ Even if your game doesn't use analog input, your players may still use physical 
     </table>
     <p>&nbsp;</p>
     <hr />
-    <p><strong>Input Behaviors</strong></p>
+    <p><strong><a name="inspector-input-behaviors" id="inspector-input-behaviors"></a>Input Behaviors</strong></p>
     <p><img src="files/images/controlmapper_inspector_input-behaviors.png" alt="" width="676" height="512" /></p>
     <p>Settings for user-modifiable Input Behaviors. Only certain properties are supported.</p>
     <p>You can define a list of Input Behaviors to be shown to the user for modification. If enabled, new controls will be displayed so the user can modify these settings. This is useful if you need to allow the user to set certain per-Action sensitivity levels such as Mouse Look Sensitivity.</p>
@@ -595,18 +604,22 @@ Even if your game doesn't use analog input, your players may still use physical 
   </table>
     <p>&nbsp;</p>
     <hr />
-    <p><strong>Element Assignment Options</strong></p>
-    <p><img src="files/images/controlmapper_inspector_element-assignment-options.png" width="676" height="74" /></p>
+    <p><strong><a name="inspector-element-assignment-options" id="inspector-element-assignment-options"></a>Element Assignment Options</strong></p>
+    <p><img src="files/images/controlmapper_inspector_element-assignment-options.png" /></p>
     <p>Various options for the element assignment.</p>
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
       <tr>
         <td width="22%" valign="top">Allow Element Assignment Conflicts</td>
         <td width="78%" valign="top">If enabled, when an element assignment conflict is found, an option will be displayed that allows the user to make the conflicting assignment anyway.</td>
       </tr>
+      <tr>
+        <td valign="top">Allow Element Assignment Swap</td>
+        <td valign="top">If enabled, when an element assignment conflict is found, an option will be displayed that allows the user to swap conflicting assignments. This only applies to the first conflicting assignment found. This option will not be displayed if Allow Element Assignment Conflicts is enabled.</td>
+      </tr>
     </table>
     <p>&nbsp;</p>
     <hr />
-    <p><strong>Timer Options</strong></p>
+    <p><strong><a name="inspector-timer-options" id="inspector-timer-options"></a>Timer Options</strong></p>
     <p><img src="files/images/controlmapper_inspector_timer-options.png" alt="" width="687" height="128" /></p>
     <p>Various timer options.</p>
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -629,7 +642,7 @@ Even if your game doesn't use analog input, your players may still use physical 
     </table>
     <p>&nbsp;</p>
 <hr />
-    <p><strong>Input  Grid Layout Options</strong></p>
+    <p><strong><a name="inspector-input-grid-layout-options" id="inspector-input-grid-layout-options"></a>Input  Grid Layout Options</strong></p>
     <p><img src="files/images/controlmapper_inspector_input-grid-layout-options.png" alt="" width="676" height="200" /></p>
     <p>Dimensions for various elements in the input grid.</p>
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -668,7 +681,7 @@ Even if your game doesn't use analog input, your players may still use physical 
     </table>
     <p>&nbsp;</p>
     <hr />
-    <p><strong>Popup Window Options</strong></p>
+    <p><strong><a name="inspector-popup-window-options" id="inspector-popup-window-options"></a>Popup Window Options</strong></p>
     <p><img src="files/images/controlmapper_inspector_popup-window-options.png" alt="" width="687" height="91" /></p>
     <p>Various options for popup windows.</p>
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -683,7 +696,7 @@ Even if your game doesn't use analog input, your players may still use physical 
     </table>
     <p>&nbsp;</p>
     <hr />
-    <p><strong><a name="screen-control-actions" id="screen-control-actions"></a>Screen Control Actions</strong></p>
+    <p><strong><a name="screen-control-actions" id="screen-control-actions"></a><a name="inspector-screen-control-actions" id="inspector-screen-control-actions"></a>Screen Control Actions</strong></p>
     <p><img src="files/images/controlmapper_inspector_screen-control-actions.png" width="662" height="147" /></p>
     <p>Actions that control the mapping screen.</p>
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -710,7 +723,7 @@ Even if your game doesn't use analog input, your players may still use physical 
     </table>
     <p>&nbsp;</p>
     <hr />
-    <p><strong>Theme Options</strong></p>
+    <p><strong><a name="inspector-theme-options" id="inspector-theme-options"></a>Theme Options</strong></p>
     <p><img src="files/images/controlmapper_inspector_theme-options.png" alt="" width="687" height="92" /></p>
     <p>UI theme options.</p>
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -725,7 +738,7 @@ Even if your game doesn't use analog input, your players may still use physical 
     </table>
     <p>&nbsp;</p>
 <hr />
-    <p><strong>Language Options</strong></p>
+    <p><strong><a name="inspector-language-actions" id="inspector-language-actions"></a>Language Options</strong></p>
     <p><img src="files/images/controlmapper_inspector_language-options.png" alt="" width="687" height="74" /></p>
     <p>Language options.</p>
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -736,7 +749,7 @@ Even if your game doesn't use analog input, your players may still use physical 
     </table>
     <p>&nbsp;</p>
 <hr />
-    <p><strong>Events</strong></p>
+    <p><strong><a name="inspector-events" id="inspector-events"></a>Events</strong></p>
     <p><img src="files/images/controlmapper_inspector_events.png" alt="" /></p>
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
       <tr>
@@ -766,7 +779,7 @@ Even if your game doesn't use analog input, your players may still use physical 
     </table>
     <p>&nbsp;</p>
     <hr />
-    <p><strong>Advanced Settings</strong></p>
+    <p><strong><a name="inspector-advanced-settings" id="inspector-advanced-settings"></a>Advanced Settings</strong></p>
     <p><img src="files/images/controlmapper_inspector_advanced-settings.png" alt="" width="687" height="68" /></p>
     <p>These are internal settings like references to GameObject and Prefabs. You should not have to change these.</p>
     <p>&nbsp;</p>
@@ -777,7 +790,7 @@ Even if your game doesn't use analog input, your players may still use physical 
         
     </div>
   <div class="footer clearfix">
-   	<p class="left">Copyright &copy;2014-2016 <a href="http://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
+   	<p class="left">Copyright &copy;2014-2018 <a href="http://guavaman.com" title="Guavaman Enterprises">Guavaman Enterprises</a>. All rights reserved. No materials may be reproduced without permission.</p>
   	<p class="right"><a href="http://guavaman.com/projects/rewired" title="Return to Rewired Website">Return to Rewired Website</a></p>
   </div>
   <!-- end .content --></div>
