@@ -173,12 +173,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   cost: 0.25
-  drainSpeed: 0.0025
+  drainSpeed: 0.007
   debounceTime: 1
   fireSound: {fileID: 8300000, guid: 0e8c5b6d934c94143ad891614c1048c9, type: 3}
+  deadThreshold: -0.1
   drainMultiplier: 1
   actualHP: 0
-  fixedtime: 0
+  fixedtime: 0.01
 --- !u!114 &114166625388901568
 MonoBehaviour:
   m_ObjectHideFlags: 0

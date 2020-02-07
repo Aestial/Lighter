@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public float currentTime;
     [SerializeField] Text timeText;
     [SerializeField] Light ambientLight;
-
+    [SerializeField] float drainSpeed = 0.85f;
     public FlameBehaviour[] lights;
 
     private int counter;
@@ -50,9 +50,9 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < lights.Length; i++)
         {
-            if (lights[i].actualHP > 0.0f)
+            if (lights[i].actualHP > lights[i].deadThreshold)
             {
-                lights[i].drainMultiplier = (lights.Length / 1.3f) / count;
+                lights[i].drainMultiplier = lights.Length * drainSpeed / count;
             }
         }
         ambientLight.intensity = count / lights.Length;

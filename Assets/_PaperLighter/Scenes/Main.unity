@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5787,8 +5787,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114281721888599000, guid: 76023b032dc1ca64d98cd1b0c44ebfee,
         type: 3}
-      propertyPath: drainSpeed
-      value: 0.003
+      propertyPath: deadThreshold
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 114281721888599000, guid: 76023b032dc1ca64d98cd1b0c44ebfee,
+        type: 3}
+      propertyPath: deadGoal
+      value: -0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76023b032dc1ca64d98cd1b0c44ebfee, type: 3}
@@ -7666,7 +7671,7 @@ PrefabInstance:
     - target: {fileID: 114281721888599000, guid: 76023b032dc1ca64d98cd1b0c44ebfee,
         type: 3}
       propertyPath: drainSpeed
-      value: 0.003
+      value: 0.007
       objectReference: {fileID: 0}
     - target: {fileID: 114281721888599000, guid: 76023b032dc1ca64d98cd1b0c44ebfee,
         type: 3}
@@ -7677,6 +7682,21 @@ PrefabInstance:
         type: 3}
       propertyPath: drainMultiplier
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114281721888599000, guid: 76023b032dc1ca64d98cd1b0c44ebfee,
+        type: 3}
+      propertyPath: fixedtime
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 114281721888599000, guid: 76023b032dc1ca64d98cd1b0c44ebfee,
+        type: 3}
+      propertyPath: deadThreshold
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 114281721888599000, guid: 76023b032dc1ca64d98cd1b0c44ebfee,
+        type: 3}
+      propertyPath: deadGoal
+      value: -0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76023b032dc1ca64d98cd1b0c44ebfee, type: 3}
@@ -9820,7 +9840,7 @@ PrefabInstance:
     - target: {fileID: 114281721888599000, guid: 76023b032dc1ca64d98cd1b0c44ebfee,
         type: 3}
       propertyPath: drainSpeed
-      value: 0.003
+      value: 0.007
       objectReference: {fileID: 0}
     - target: {fileID: 114281721888599000, guid: 76023b032dc1ca64d98cd1b0c44ebfee,
         type: 3}
@@ -9831,6 +9851,21 @@ PrefabInstance:
         type: 3}
       propertyPath: drainMultiplier
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114281721888599000, guid: 76023b032dc1ca64d98cd1b0c44ebfee,
+        type: 3}
+      propertyPath: fixedtime
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 114281721888599000, guid: 76023b032dc1ca64d98cd1b0c44ebfee,
+        type: 3}
+      propertyPath: deadThreshold
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 114281721888599000, guid: 76023b032dc1ca64d98cd1b0c44ebfee,
+        type: 3}
+      propertyPath: deadGoal
+      value: -0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76023b032dc1ca64d98cd1b0c44ebfee, type: 3}
@@ -15642,6 +15677,7 @@ MonoBehaviour:
   currentTime: 0
   timeText: {fileID: 439947927}
   ambientLight: {fileID: 2081537467}
+  drainSpeed: 0.85
   lights:
   - {fileID: 1277106853}
   - {fileID: 790853002}
@@ -23981,7 +24017,7 @@ PrefabInstance:
     - target: {fileID: 114281721888599000, guid: 76023b032dc1ca64d98cd1b0c44ebfee,
         type: 3}
       propertyPath: drainSpeed
-      value: 0.003
+      value: 0.007
       objectReference: {fileID: 0}
     - target: {fileID: 114281721888599000, guid: 76023b032dc1ca64d98cd1b0c44ebfee,
         type: 3}
@@ -23992,6 +24028,21 @@ PrefabInstance:
         type: 3}
       propertyPath: drainMultiplier
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114281721888599000, guid: 76023b032dc1ca64d98cd1b0c44ebfee,
+        type: 3}
+      propertyPath: fixedtime
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 114281721888599000, guid: 76023b032dc1ca64d98cd1b0c44ebfee,
+        type: 3}
+      propertyPath: deadThreshold
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 114281721888599000, guid: 76023b032dc1ca64d98cd1b0c44ebfee,
+        type: 3}
+      propertyPath: deadGoal
+      value: -0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76023b032dc1ca64d98cd1b0c44ebfee, type: 3}
