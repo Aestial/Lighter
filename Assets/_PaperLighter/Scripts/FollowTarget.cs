@@ -8,8 +8,8 @@ public class FollowTarget : MonoBehaviour
     [SerializeField] float startSpeed;
     [SerializeField] float stopSpeed;
     [SerializeField] float speed = 2.0f;
-    Vector3 offset;
-    bool isMoving;
+    private Vector3 offset;
+    private bool isMoving;
 
     void Start()
     {
