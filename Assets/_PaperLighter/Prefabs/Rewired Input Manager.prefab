@@ -55,6 +55,7 @@ MonoBehaviour:
       xboxOne_primaryInputSource: 0
       ps4_primaryInputSource: 0
       webGL_primaryInputSource: 0
+      stadia_primaryInputSource: 0
       useXInput: 1
       useNativeMouse: 1
       useEnhancedDeviceSupport: 1
@@ -121,12 +122,17 @@ MonoBehaviour:
       platformVars_webGL:
         disableKeyboard: 0
         ignoreInputWhenAppNotInFocus: 1
+      platformVars_stadia:
+        disableKeyboard: 0
+        ignoreInputWhenAppNotInFocus: 1
       maxJoysticksPerPlayer: 1
       autoAssignJoysticks: 1
       assignJoysticksToPlayingPlayersOnly: 0
       distributeJoysticksEvenly: 1
       reassignJoystickToPreviousOwnerOnReconnect: 1
       defaultJoystickAxis2DDeadZoneType: 1
+      defaultJoystickAxis2DSensitivityType: 0
+      defaultAxisSensitivityType: 0
       force4WayHats: 0
       throttleCalibrationMode: 0
       activateActionButtonsOnNegativeValue: 0
@@ -153,6 +159,10 @@ MonoBehaviour:
         exportConsts_customControllersClassName: CustomController
         exportConsts_customControllersAxesClassName: Axis
         exportConsts_customControllersButtonsClassName: Button
+        exportConsts_layoutManagerRuleSets: 1
+        exportConsts_layoutManagerRuleSetsClassName: LayoutManagerRuleSet
+        exportConsts_mapEnablerRuleSets: 1
+        exportConsts_mapEnablerRuleSetsClassName: MapEnablerRuleSet
         exportConsts_allCapsConstantNames: 0
     players:
     - _id: 9999999
@@ -173,6 +183,13 @@ MonoBehaviour:
       _assignMouseOnStart: 1
       _assignKeyboardOnStart: 1
       _excludeFromControllerAutoAssignment: 1
+      _controllerMapLayoutManagerSettings:
+        _enabled: 1
+        _loadFromUserDataStore: 1
+        _ruleSets: []
+      _controllerMapEnablerSettings:
+        _enabled: 1
+        _ruleSets: []
     - _id: 1
       _name: Player0
       _descriptiveName: Player0
@@ -197,6 +214,13 @@ MonoBehaviour:
       _assignMouseOnStart: 0
       _assignKeyboardOnStart: 1
       _excludeFromControllerAutoAssignment: 0
+      _controllerMapLayoutManagerSettings:
+        _enabled: 1
+        _loadFromUserDataStore: 1
+        _ruleSets: []
+      _controllerMapEnablerSettings:
+        _enabled: 1
+        _ruleSets: []
     actions:
     - _id: 0
       _name: Move Horizontal
@@ -498,6 +522,7 @@ MonoBehaviour:
     - _name: CustomController0
       _descriptiveName: CustomController0
       _id: 0
+      _typeGuidString: 
       _elementIdentifiers:
       - _id: 0
         _name: Horizontal
@@ -527,10 +552,19 @@ MonoBehaviour:
         min: -1
         max: 1
         doNotCalibrateRange: 0
+        sensitivityType: 0
+        sensitivity: 1
+        sensitivityCurve:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
         axisInfo:
           _dataFormat: 0
           _excludeFromPolling: 0
           _specialAxisType: 0
+          _pollingDeadZone: -1
       - elementIdentifierId: 1
         name: Vertical
         range: 0
@@ -540,14 +574,25 @@ MonoBehaviour:
         min: -1
         max: 1
         doNotCalibrateRange: 0
+        sensitivityType: 0
+        sensitivity: 1
+        sensitivityCurve:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
         axisInfo:
           _dataFormat: 0
           _excludeFromPolling: 0
           _specialAxisType: 0
+          _pollingDeadZone: -1
       _buttons:
       - elementIdentifierId: 2
         name: Fire
       _elementIdentifierIdCounter: 3
+    controllerMapLayoutManagerRuleSets: []
+    controllerMapEnablerRuleSets: []
     playerIdCounter: 2
     actionIdCounter: 3
     actionCategoryIdCounter: 1
@@ -562,5 +607,7 @@ MonoBehaviour:
     mouseMapIdCounter: 0
     customControllerMapIdCounter: 1
     customControllerIdCounter: 1
+    controllerMapLayoutManagerSetIdCounter: 0
+    controllerMapEnablerSetIdCounter: 0
   _controllerDataFiles: {fileID: 11400000, guid: d21d2b20df8369642b76aafbb2576ba7,
     type: 2}
