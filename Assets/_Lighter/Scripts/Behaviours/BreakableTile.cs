@@ -1,13 +1,15 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class BreakableTile : MonoBehaviour, IBreakable, IDamageable<int>
+public class BreakableTile : MonoBehaviour, IBreakable //, IDamageable<int>
 {
     [SerializeField] int steps = 1;
     private int currentSteps;
+
     public void Break()
     {
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
+
     public void Damage(int damageTaken)
     {
         currentSteps -= damageTaken;
@@ -16,11 +18,12 @@ public class BreakableTile : MonoBehaviour, IBreakable, IDamageable<int>
             Break();
         }
     }
-    private void OnTriggerEnter(Collider other)
+    
+    private void OnTriggerExit(Collider other)
     {
         Debug.Log("Triggered on a Breakable Tile");
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionExit(Collision collision)
     {
         Debug.Log("Collided on a Breakable Tile");
         Damage(1);
