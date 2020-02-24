@@ -19,11 +19,11 @@ public class BreakableTile : MonoBehaviour, IBreakable //, IDamageable<int>
         }
     }
     
-    private void OnTriggerExit(Collider other)
-    {
-        Debug.Log("Triggered on a Breakable Tile");
-    }
-    private void OnCollisionExit(Collision collision)
+    //void OnTriggerExit(Collider other)
+    //{
+    //    Debug.Log("Triggered on a Breakable Tile");
+    //}
+    void OnCollisionExit(Collision collision)
     {
         Debug.Log("Collided on a Breakable Tile");
         Damage(1);

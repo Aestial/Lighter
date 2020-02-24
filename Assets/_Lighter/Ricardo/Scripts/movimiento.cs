@@ -22,8 +22,8 @@ public class movimiento : MonoBehaviour
 
     void Update()
     {
-        if (characterController.isGrounded)
-        {
+        //if (characterController.isGrounded)
+        //{
             // We are grounded, so recalculate
             // move direction directly from axes
 
@@ -47,7 +47,7 @@ public class movimiento : MonoBehaviour
             //{
             //    Animar.SetBool("IsPunching", true);
             //}else Animar.SetBool("IsPunching", false);
-        }
+        //}
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
         // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
