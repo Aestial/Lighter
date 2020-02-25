@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BreakableTile : MonoBehaviour, IBreakable //, IDamageable<int>
+public class BreakableTile : MonoBehaviour, IBreakable, IDamageable<int>
 {
     [SerializeField] int steps = 1;
     private int currentSteps;
