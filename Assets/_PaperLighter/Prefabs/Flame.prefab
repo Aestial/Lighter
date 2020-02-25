@@ -171,11 +171,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52332003688c37f4890245a219408f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   cost: 0.25
   drainSpeed: 0.007
   debounceTime: 1
   fireSound: {fileID: 8300000, guid: 0e8c5b6d934c94143ad891614c1048c9, type: 3}
+  deadGoal: -0.05
   deadThreshold: -0.1
   drainMultiplier: 1
   actualHP: 0
@@ -9427,11 +9427,11 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
+  m_UseCustomVertexStreams: 1
   m_EnableGPUInstancing: 0
   m_ApplyActiveColorSpace: 0
   m_AllowRoll: 1
-  m_VertexStreams: 0001030405
+  m_VertexStreams: 000304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
