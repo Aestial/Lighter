@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class WindBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject wind;
+    public Transform endpoint;
+    public float windSpeed;
+   
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerStay(Collider otherObj)
     {
-        
+        otherObj.transform.position = Vector3.MoveTowards(otherObj.transform.position, endpoint.position, windSpeed * Time.deltaTime);
+        Debug.Log("Collided with a Wind Collider");
     }
 }

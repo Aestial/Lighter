@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17513, g: 0.2190972, b: 0.3013993, a: 1}
+  m_IndirectSpecularColor: {r: 0.17513032, g: 0.2190979, b: 0.30140054, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -181,6 +181,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 69.908005, y: -144.546, z: 8.650001}
+--- !u!1 &634176357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 634176358}
+  m_Layer: 0
+  m_Name: Final_Viento_Verde
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &634176358
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634176357}
+  m_LocalRotation: {x: -0, y: -0, z: -0.00000006322027, w: 1}
+  m_LocalPosition: {x: -0.0071653817, y: -0.6816153, z: -0.010277219}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 974109856}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &973611136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,6 +1570,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5b9916d409a7248a2689c5356ec934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wind: {fileID: 973611328}
+  endpoint: {fileID: 634176358}
+  windSpeed: 6
 --- !u!1 &973611330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,11 +1599,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973611328}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.052578006, y: 1.6071978, z: 0.052578017}
-  m_Center: {x: 0, y: 0.15741722, z: 1.118517e-15}
+  m_Size: {x: 0.09064928, y: 1.6071976, z: 0.08943184}
+  m_Center: {x: 0.0017305874, y: 0.15741725, z: -0.0026323579}
 --- !u!1 &973611332
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,7 +2111,8 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -2.5492523, y: 0.25828388, z: -2.1826458}
   m_LocalScale: {x: 1.779077, y: 1.779077, z: 1.779077}
-  m_Children: []
+  m_Children:
+  - {fileID: 634176358}
   m_Father: {fileID: 974109942}
   m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
